@@ -1,0 +1,128 @@
+// Vitest Snapshot v1
+
+exports[`Drivers > has a list of drivers 1`] = `
+{
+  "content": {
+    "files": [
+      "./pages/**/*.{js,ts,jsx,tsx}",
+      "./components/**/*.{js,ts,jsx,tsx}",
+    ],
+    "name": "tailwind.config.js",
+  },
+  "cssLocation": "./styles/globals.css",
+  "initCommands": [
+    "npx tailwindcss init -p",
+  ],
+  "requiredDependencies": [
+    "tailwindcss",
+    "postcss",
+    "autoprefixer",
+  ],
+  "steps": [],
+}
+`;
+
+exports[`Drivers > has a list of drivers 2`] = `
+{
+  "content": {
+    "files": [
+      "./components/**/*.{js,vue,ts}",
+      "./layouts/**/*.vue",
+      "./pages/**/*.vue",
+      "./plugins/**/*.{js,ts}",
+      "./nuxt.config.{js,ts}",
+    ],
+    "name": "tailwind.config.js",
+  },
+  "cssLocation": "./assets/css/main.css",
+  "initCommands": [
+    "npx tailwindcss init",
+  ],
+  "requiredDependencies": [
+    "tailwindcss",
+    "postcss@latest",
+    "autoprefixer@latest",
+    "@nuxt/postcss8",
+  ],
+  "steps": [
+    [Function],
+  ],
+}
+`;
+
+exports[`Drivers > has a list of drivers 3`] = `
+{
+  "content": {
+    "files": [
+      "./components/**/*.{js,vue,ts}",
+      "./layouts/**/*.vue",
+      "./pages/**/*.vue",
+      "./app.vue",
+      "./plugins/**/*.{js,ts}",
+    ],
+    "name": "tailwind.config.js",
+  },
+  "cssLocation": "./assets/css/main.css",
+  "initCommands": [
+    "npx tailwindcss init",
+  ],
+  "requiredDependencies": [
+    "tailwindcss",
+    "postcss@latest",
+    "autoprefixer@latest",
+  ],
+  "steps": [
+    [Function],
+  ],
+}
+`;
+
+exports[`Drivers > has a list of drivers 4`] = `
+{
+  "content": {
+    "files": [
+      "./app/**/*.{js,ts,jsx,tsx}",
+    ],
+    "name": "tailwind.config.js",
+  },
+  "cssLocation": "./styles/app.css",
+  "initCommands": [
+    "npx tailwindcss init -p",
+  ],
+  "requiredDependencies": [
+    "tailwindcss",
+    "postcss",
+    "autoprefixer",
+  ],
+  "steps": [
+    [Function],
+    [Function],
+  ],
+}
+`;
+
+exports[`Drivers > has a list of drivers 5`] = `
+{
+  "content": {
+    "files": [
+      "./src/**/*.{html,js,svelte,ts}",
+    ],
+    "name": "tailwind.config.cjs",
+  },
+  "cssLocation": "./src/app.css",
+  "initCommands": [
+    "npx tailwindcss init tailwind.config.cjs -p",
+    "mv postcss.config.js postcss.config.cjs",
+  ],
+  "requiredDependencies": [
+    "tailwindcss",
+    "postcss",
+    "autoprefixer",
+    "svelte-preprocess",
+  ],
+  "steps": [
+    [Function],
+    [Function],
+  ],
+}
+`;

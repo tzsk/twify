@@ -1,0 +1,38 @@
+// Vitest Snapshot v1
+
+exports[`Nuxt2 Steps > can setup nuxt.config.js file case 1 1`] = `
+"export default {
+}"
+`;
+
+exports[`Nuxt2 Steps > can setup nuxt.config.js file case 2 1`] = `
+"export default {
+  css: ['other/css/file.css', '@/assets/css/main.css'],
+  build: {
+    foo: 'bar',
+
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {}
+      }
+    }
+  },
+  buildModules: ['nuxt/exiting/build', 'postcss8'],
+}"
+`;
+
+exports[`Nuxt2 Steps > can setup nuxt.config.js file case 3 1`] = `
+"export default {
+  css: ['@/assets/css/main.css'],
+  build: {
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {}
+      }
+    }
+  },
+  buildModules: ['postcss8']
+}"
+`;

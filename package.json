@@ -1,0 +1,64 @@
+{
+  "name": "twify",
+  "version": "1.0.0",
+  "description": "A Tool to Setup TailwindCSS in your Project with a Single Command",
+  "bin": {
+    "twify": "dist/main.js"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build && npm start",
+    "start": "node dist/main.js",
+    "build": "microbundle -i src/main.ts -o dist/main.js --no-pkg-main --target=node -f modern",
+    "lint": "eslint",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "coverage": "vitest run --coverage"
+  },
+  "keywords": [
+    "tailwindcss",
+    "tailwind",
+    "nuxt tailwind",
+    "nextjs tailwind",
+    "remix tailwind",
+    "svelte tailwind"
+  ],
+  "author": {
+    "email": "mailtokmahmed@gmail.com",
+    "name": "Kazi Ahmed",
+    "url": "https://github.com/tzsk"
+  },
+  "repository": {
+    "url": "https://github.com/tzsk/twify"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "commander": "^9.2.0",
+    "enquirer": "^2.3.6",
+    "fs-extra": "^10.1.0",
+    "gradient-string": "^2.0.1",
+    "jscodeshift": "^0.13.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/gradient-string": "^1.1.2",
+    "@types/jscodeshift": "^0.11.5",
+    "@types/node": "^17.0.33",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "c8": "^7.11.2",
+    "esbuild": "^0.14.42",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "microbundle": "^0.15.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4",
+    "vitest": "^0.12.6"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}

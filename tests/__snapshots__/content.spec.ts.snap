@@ -1,0 +1,13 @@
+// Vitest Snapshot v1
+
+exports[`Content Code Mod > can modify and add content in tailwind config 1`] = `
+"/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [\\"foo.{js,ts}\\", \\"bar.{js,ts}\\"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+"
+`;

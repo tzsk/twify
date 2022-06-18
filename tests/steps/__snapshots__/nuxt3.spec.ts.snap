@@ -1,0 +1,52 @@
+// Vitest Snapshot v1
+
+exports[`Nuxt 3 Steps > can setup nuxt.config.ts file case 1 1`] = `
+"import { defineNuxtConfig } from 'nuxt';
+
+// https://v3.nuxtjs.org/api/configuration/nuxt.config
+export default defineNuxtConfig({
+  css: [\\"@/assets/css/main.css\\"],
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {}
+    }
+  }
+});
+"
+`;
+
+exports[`Nuxt 3 Steps > can setup nuxt.config.ts file case 2 1`] = `
+"import { defineNuxtConfig } from 'nuxt';
+
+// https://v3.nuxtjs.org/api/configuration/nuxt.config
+export default defineNuxtConfig({
+  css: ['other/css/file.css', \\"@/assets/css/main.css\\"],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {}
+    },
+
+    config: true
+  }
+});
+"
+`;
+
+exports[`Nuxt 3 Steps > can setup nuxt.config.ts file case 3 1`] = `
+"import { defineNuxtConfig } from 'nuxt';
+
+// https://v3.nuxtjs.org/api/configuration/nuxt.config
+export default defineNuxtConfig({
+  css: [\\"@/assets/css/main.css\\"],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {}
+    }
+  }
+});
+"
+`;

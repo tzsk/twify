@@ -1,0 +1,183 @@
+// Vitest Snapshot v1
+
+exports[`Remix Steps > can setup remix js root file 1`] = `
+"import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from \\"@remix-run/react\\";
+
+import styles from \\"./styles/app.css\\";
+
+export const meta = () => ({
+  charset: \\"utf-8\\",
+  title: \\"New Remix App\\",
+  viewport: \\"width=device-width,initial-scale=1\\",
+});
+
+export const links = () => [{
+  rel: \\"stylesheet\\",
+  href: styles
+}];
+
+export default function App() {
+  return (
+    <html lang=\\"en\\">
+      <head>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <Outlet />
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
+      </body>
+    </html>
+  );
+}
+"
+`;
+
+exports[`Remix Steps > can setup remix js root file with links 1`] = `
+"
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from \\"@remix-run/react\\";
+
+import styles from \\"./styles/app.css\\";
+
+export const meta = () => ({
+  charset: \\"utf-8\\",
+  title: \\"New Remix App\\",
+  viewport: \\"width=device-width,initial-scale=1\\",
+});
+
+export const links = () => [{ foo: 'bar' }, {
+  rel: \\"stylesheet\\",
+  href: styles
+}];
+
+export default function App() {
+  return (
+    <html lang=\\"en\\">
+      <head>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <Outlet />
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
+      </body>
+    </html>
+  );
+}
+"
+`;
+
+exports[`Remix Steps > can setup remix ts root file 1`] = `
+"import type { MetaFunction, LinksFunction } from \\"@remix-run/node\\";
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from \\"@remix-run/react\\";
+
+import styles from \\"./styles/app.css\\";
+
+export const meta: MetaFunction = () => ({
+  charset: \\"utf-8\\",
+  title: \\"New Remix App\\",
+  viewport: \\"width=device-width,initial-scale=1\\",
+});
+
+export const links: LinksFunction = () => [{
+  rel: \\"stylesheet\\",
+  href: styles
+}];
+
+export default function App() {
+  return (
+    <html lang=\\"en\\">
+      <head>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <Outlet />
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
+      </body>
+    </html>
+  );
+}
+"
+`;
+
+exports[`Remix Steps > can setup remix ts root file with links 1`] = `
+"import type { MetaFunction, LinksFunction } from \\"@remix-run/node\\";
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from \\"@remix-run/react\\";
+
+import styles from \\"./styles/app.css\\";
+
+export const meta: MetaFunction = () => ({
+  charset: \\"utf-8\\",
+  title: \\"New Remix App\\",
+  viewport: \\"width=device-width,initial-scale=1\\",
+});
+
+export const links: LinksFunction = () => [{ foo: \\"bar\\" }, {
+  rel: \\"stylesheet\\",
+  href: styles
+}];
+
+export default function App() {
+  return (
+    <html lang=\\"en\\">
+      <head>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <Outlet />
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
+      </body>
+    </html>
+  );
+}
+"
+`;
+
+exports[`Remix Steps > will configure package.json scripts 1`] = `
+{
+  "name": "bar",
+  "scripts": {
+    "build": "npm run build:css && remix build",
+    "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
+    "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
+  },
+}
+`;
