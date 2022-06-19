@@ -3,6 +3,7 @@
 ![Build](https://img.shields.io/github/workflow/status/tzsk/twify/CI/main?logo=github&style=for-the-badge)
 [![npm](https://img.shields.io/npm/v/twify?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/twify)
 [![npm](https://img.shields.io/npm/dt/twify?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/twify)
+![GitHub top language](https://img.shields.io/github/languages/top/tzsk/twify?logo=typescript&style=for-the-badge)
 
 A simple tool to setup [Tailwind CSS](https://tailwindcss.com/) in your fresh project with a Single Command.
 
