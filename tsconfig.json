@@ -5,6 +5,7 @@
     "module": "ESNext",
     "types": ["vitest/globals"],
     "esModuleInterop": true,
+    "declaration": false,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,

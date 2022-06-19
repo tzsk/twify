@@ -112,7 +112,6 @@ exports[`Drivers > has a list of drivers 5`] = `
   "cssLocation": "./src/app.css",
   "initCommands": [
     "npx tailwindcss init tailwind.config.cjs -p",
-    "mv postcss.config.js postcss.config.cjs",
   ],
   "requiredDependencies": [
     "tailwindcss",
@@ -121,6 +120,7 @@ exports[`Drivers > has a list of drivers 5`] = `
     "svelte-preprocess",
   ],
   "steps": [
+    [Function],
     [Function],
     [Function],
   ],

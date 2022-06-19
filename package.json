@@ -1,15 +1,18 @@
 {
   "name": "twify",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A Tool to Setup TailwindCSS in your Project with a Single Command",
   "bin": {
     "twify": "dist/main.js"
   },
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "npm run build && npm start",
     "start": "node dist/main.js",
-    "build": "microbundle -i src/main.ts -o dist/main.js --no-pkg-main --target=node -f modern",
+    "build": "microbundle -i src/main.ts -o dist/main.js --no-pkg-main --target=node -f modern --compress --no-sourcemap --tsconfig tsconfig.json --no-generateTypes",
     "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest watch",

@@ -12,6 +12,7 @@ describe('Processor', () => {
   it('will process a framework driver', async () => {
     vi.stubGlobal('console', { log: vi.fn() });
     vi.spyOn(fs, 'ensureFileSync').mockReturnValue();
+    vi.spyOn(fs, 'readFileSync').mockReturnValue('');
     vi.spyOn(fs, 'writeFileSync').mockReturnValue();
     vi.spyOn(helpers, 'detectInstaller').mockReturnValue('npm');
     const runner = vi

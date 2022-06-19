@@ -27,7 +27,8 @@ export async function handle(framework: Framework) {
   // Write content to cssLocation
   console.log(`\nSetting up ${chalk.blue.bold(cssLocation)}...`);
   fs.ensureFileSync(cssLocation);
-  fs.writeFileSync(cssLocation, CSS_STUB);
+  const exitingCss = fs.readFileSync(cssLocation, 'utf8');
+  fs.writeFileSync(cssLocation, `${exitingCss}\n\n${CSS_STUB}`);
 
   await setupContent(framework);
 

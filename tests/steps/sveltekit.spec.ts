@@ -1,5 +1,6 @@
 import fs from 'fs-extra';
 import {
+  movePostCSS,
   setupConfigFile,
   setupLayoutFile,
 } from '../../src/frameworks/steps/sveltekit';
@@ -80,5 +81,22 @@ describe('SvelteKit Steps', () => {
     await setupLayoutFile();
 
     expect(writeSpy).not.toHaveBeenCalled();
+  });
+
+  it('can move postcss.config.js if exists', async () => {
+    vi.spyOn(fs, 'existsSync')
+      .mockReturnValueOnce(true)
+      .mockReturnValueOnce(false);
+    const move = vi.spyOn(fs, 'move').mockResolvedValue();
+
+    await movePostCSS();
+
+    const [from, to] = move.mock.lastCall || [];
+    expect(move).toHaveBeenCalled();
+    expect(from).toMatch('postcss.config.js');
+    expect(to).toMatch('postcss.config.cjs');
+
+    await movePostCSS();
+    expect(move).toHaveBeenCalledTimes(1);
   });
 });

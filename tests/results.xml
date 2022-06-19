@@ -1,85 +1,87 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-    <testsuite name="tests/drivers.spec.ts" timestamp="2022-06-18T12:29:32.187Z" hostname="Kazis-MacBook-Pro.local" tests="1" failures="0" errors="0" skipped="0" time="0.2410000000">
-        <testcase classname="tests/drivers.spec.ts" name="Drivers &gt; has a list of drivers" time="0.2400000000">
+    <testsuite name="tests/constants.spec.ts" timestamp="2022-06-19T09:21:53.284Z" hostname="Kazis-MacBook-Pro.local" tests="1" failures="0" errors="0" skipped="0" time="0.0090000000">
+        <testcase classname="tests/constants.spec.ts" name="Constants &gt; has default css content" time="0.0080000000">
         </testcase>
     </testsuite>
-    <testsuite name="tests/constants.spec.ts" timestamp="2022-06-18T12:29:32.189Z" hostname="Kazis-MacBook-Pro.local" tests="1" failures="0" errors="0" skipped="0" time="0.0120000000">
-        <testcase classname="tests/constants.spec.ts" name="Constants &gt; has default css content" time="0.0120000000">
+    <testsuite name="tests/drivers.spec.ts" timestamp="2022-06-19T09:21:53.285Z" hostname="Kazis-MacBook-Pro.local" tests="1" failures="0" errors="0" skipped="0" time="0.7230000000">
+        <testcase classname="tests/drivers.spec.ts" name="Drivers &gt; has a list of drivers" time="0.7220000000">
         </testcase>
     </testsuite>
-    <testsuite name="tests/helpers.spec.ts" timestamp="2022-06-18T12:29:32.190Z" hostname="Kazis-MacBook-Pro.local" tests="3" failures="0" errors="0" skipped="0" time="0.0120000000">
-        <testcase classname="tests/helpers.spec.ts" name="Helpers &gt; can detect project type" time="0.0040000000">
+    <testsuite name="tests/helpers.spec.ts" timestamp="2022-06-19T09:21:53.286Z" hostname="Kazis-MacBook-Pro.local" tests="3" failures="0" errors="0" skipped="0" time="0.0180000000">
+        <testcase classname="tests/helpers.spec.ts" name="Helpers &gt; can detect project type" time="0.0100000000">
         </testcase>
         <testcase classname="tests/helpers.spec.ts" name="Helpers &gt; can detect installer">
         </testcase>
-        <testcase classname="tests/helpers.spec.ts" name="Helpers &gt; can run command" time="0.0050000000">
+        <testcase classname="tests/helpers.spec.ts" name="Helpers &gt; can run command" time="0.0060000000">
         </testcase>
     </testsuite>
-    <testsuite name="tests/content.spec.ts" timestamp="2022-06-18T12:29:32.191Z" hostname="Kazis-MacBook-Pro.local" tests="1" failures="0" errors="0" skipped="0" time="0.6940000000">
-        <testcase classname="tests/content.spec.ts" name="Content Code Mod &gt; can modify and add content in tailwind config" time="0.6930000000">
+    <testsuite name="tests/steps/sveltekit.spec.ts" timestamp="2022-06-19T09:21:53.287Z" hostname="Kazis-MacBook-Pro.local" tests="6" failures="0" errors="0" skipped="0" time="1.3740000000">
+        <testcase classname="tests/steps/sveltekit.spec.ts" name="SvelteKit Steps &gt; can setup svelte.config.js file case 1" time="1.2080000000">
+        </testcase>
+        <testcase classname="tests/steps/sveltekit.spec.ts" name="SvelteKit Steps &gt; can setup svelte.config.js file case 2" time="0.1350000000">
+        </testcase>
+        <testcase classname="tests/steps/sveltekit.spec.ts" name="SvelteKit Steps &gt; can setup layout file if it does not exist in ts" time="0.0120000000">
+        </testcase>
+        <testcase classname="tests/steps/sveltekit.spec.ts" name="SvelteKit Steps &gt; can setup layout file if it does not exist in js" time="0.0060000000">
+        </testcase>
+        <testcase classname="tests/steps/sveltekit.spec.ts" name="SvelteKit Steps &gt; will not setup layout file if it already exists" time="0.0030000000">
+        </testcase>
+        <testcase classname="tests/steps/sveltekit.spec.ts" name="SvelteKit Steps &gt; can move postcss.config.js if exists" time="0.0050000000">
         </testcase>
     </testsuite>
-    <testsuite name="tests/steps/nuxt2.spec.ts" timestamp="2022-06-18T12:29:32.192Z" hostname="Kazis-MacBook-Pro.local" tests="3" failures="0" errors="0" skipped="0" time="0.7230000000">
-        <testcase classname="tests/steps/nuxt2.spec.ts" name="Nuxt2 Steps &gt; can setup nuxt.config.js file case 1" time="0.7010000000">
+    <testsuite name="tests/steps/nuxt3.spec.ts" timestamp="2022-06-19T09:21:53.288Z" hostname="Kazis-MacBook-Pro.local" tests="3" failures="0" errors="0" skipped="0" time="1.2140000000">
+        <testcase classname="tests/steps/nuxt3.spec.ts" name="Nuxt 3 Steps &gt; can setup nuxt.config.ts file case 1" time="1.1800000000">
         </testcase>
-        <testcase classname="tests/steps/nuxt2.spec.ts" name="Nuxt2 Steps &gt; can setup nuxt.config.js file case 2" time="0.0140000000">
+        <testcase classname="tests/steps/nuxt3.spec.ts" name="Nuxt 3 Steps &gt; can setup nuxt.config.ts file case 2" time="0.0200000000">
         </testcase>
-        <testcase classname="tests/steps/nuxt2.spec.ts" name="Nuxt2 Steps &gt; can setup nuxt.config.js file case 3" time="0.0060000000">
-        </testcase>
-    </testsuite>
-    <testsuite name="tests/steps/remix.spec.ts" timestamp="2022-06-18T12:29:32.193Z" hostname="Kazis-MacBook-Pro.local" tests="5" failures="0" errors="0" skipped="0" time="0.9790000000">
-        <testcase classname="tests/steps/remix.spec.ts" name="Remix Steps &gt; will configure package.json scripts" time="0.0370000000">
-        </testcase>
-        <testcase classname="tests/steps/remix.spec.ts" name="Remix Steps &gt; can setup remix js root file" time="0.7190000000">
-        </testcase>
-        <testcase classname="tests/steps/remix.spec.ts" name="Remix Steps &gt; can setup remix ts root file" time="0.1460000000">
-        </testcase>
-        <testcase classname="tests/steps/remix.spec.ts" name="Remix Steps &gt; can setup remix js root file with links" time="0.0240000000">
-        </testcase>
-        <testcase classname="tests/steps/remix.spec.ts" name="Remix Steps &gt; can setup remix ts root file with links" time="0.0510000000">
+        <testcase classname="tests/steps/nuxt3.spec.ts" name="Nuxt 3 Steps &gt; can setup nuxt.config.ts file case 3" time="0.0110000000">
         </testcase>
     </testsuite>
-    <testsuite name="tests/steps/nuxt3.spec.ts" timestamp="2022-06-18T12:29:32.193Z" hostname="Kazis-MacBook-Pro.local" tests="3" failures="0" errors="0" skipped="0" time="0.7360000000">
-        <testcase classname="tests/steps/nuxt3.spec.ts" name="Nuxt 3 Steps &gt; can setup nuxt.config.ts file case 1" time="0.7110000000">
-        </testcase>
-        <testcase classname="tests/steps/nuxt3.spec.ts" name="Nuxt 3 Steps &gt; can setup nuxt.config.ts file case 2" time="0.0120000000">
-        </testcase>
-        <testcase classname="tests/steps/nuxt3.spec.ts" name="Nuxt 3 Steps &gt; can setup nuxt.config.ts file case 3" time="0.0050000000">
+    <testsuite name="tests/processor.spec.ts" timestamp="2022-06-19T09:21:53.289Z" hostname="Kazis-MacBook-Pro.local" tests="1" failures="0" errors="0" skipped="0" time="0.0120000000">
+        <testcase classname="tests/processor.spec.ts" name="Processor &gt; will process a framework driver" time="0.0100000000">
         </testcase>
     </testsuite>
-    <testsuite name="tests/steps/sveltekit.spec.ts" timestamp="2022-06-18T12:29:32.194Z" hostname="Kazis-MacBook-Pro.local" tests="5" failures="0" errors="0" skipped="0" time="0.7510000000">
-        <testcase classname="tests/steps/sveltekit.spec.ts" name="SvelteKit Steps &gt; can setup svelte.config.js file case 1" time="0.6530000000">
-        </testcase>
-        <testcase classname="tests/steps/sveltekit.spec.ts" name="SvelteKit Steps &gt; can setup svelte.config.js file case 2" time="0.0840000000">
-        </testcase>
-        <testcase classname="tests/steps/sveltekit.spec.ts" name="SvelteKit Steps &gt; can setup layout file if it does not exist in ts" time="0.0080000000">
-        </testcase>
-        <testcase classname="tests/steps/sveltekit.spec.ts" name="SvelteKit Steps &gt; can setup layout file if it does not exist in js">
-        </testcase>
-        <testcase classname="tests/steps/sveltekit.spec.ts" name="SvelteKit Steps &gt; will not setup layout file if it already exists" time="0.0020000000">
+    <testsuite name="tests/content.spec.ts" timestamp="2022-06-19T09:21:53.289Z" hostname="Kazis-MacBook-Pro.local" tests="1" failures="0" errors="0" skipped="0" time="1.1200000000">
+        <testcase classname="tests/content.spec.ts" name="Content Code Mod &gt; can modify and add content in tailwind config" time="1.1180000000">
         </testcase>
     </testsuite>
-    <testsuite name="tests/processor.spec.ts" timestamp="2022-06-18T12:29:32.195Z" hostname="Kazis-MacBook-Pro.local" tests="1" failures="0" errors="0" skipped="0" time="0.0150000000">
-        <testcase classname="tests/processor.spec.ts" name="Processor &gt; will process a framework driver" time="0.0130000000">
+    <testsuite name="tests/steps/nuxt2.spec.ts" timestamp="2022-06-19T09:21:53.290Z" hostname="Kazis-MacBook-Pro.local" tests="3" failures="0" errors="0" skipped="0" time="1.0910000000">
+        <testcase classname="tests/steps/nuxt2.spec.ts" name="Nuxt2 Steps &gt; can setup nuxt.config.js file case 1" time="1.0040000000">
+        </testcase>
+        <testcase classname="tests/steps/nuxt2.spec.ts" name="Nuxt2 Steps &gt; can setup nuxt.config.js file case 2" time="0.0620000000">
+        </testcase>
+        <testcase classname="tests/steps/nuxt2.spec.ts" name="Nuxt2 Steps &gt; can setup nuxt.config.js file case 3" time="0.0120000000">
         </testcase>
     </testsuite>
-    <testsuite name="tests/main.spec.ts" timestamp="2022-06-18T12:29:32.195Z" hostname="Kazis-MacBook-Pro.local" tests="1" failures="0" errors="0" skipped="0" time="0.0140000000">
-        <testcase classname="tests/main.spec.ts" name="Main &gt; will setup the cli app" time="0.0110000000">
+    <testsuite name="tests/steps/remix.spec.ts" timestamp="2022-06-19T09:21:53.290Z" hostname="Kazis-MacBook-Pro.local" tests="5" failures="0" errors="0" skipped="0" time="1.3310000000">
+        <testcase classname="tests/steps/remix.spec.ts" name="Remix Steps &gt; will configure package.json scripts" time="0.0100000000">
+        </testcase>
+        <testcase classname="tests/steps/remix.spec.ts" name="Remix Steps &gt; can setup remix js root file" time="1.1240000000">
+        </testcase>
+        <testcase classname="tests/steps/remix.spec.ts" name="Remix Steps &gt; can setup remix ts root file" time="0.1260000000">
+        </testcase>
+        <testcase classname="tests/steps/remix.spec.ts" name="Remix Steps &gt; can setup remix js root file with links" time="0.0290000000">
+        </testcase>
+        <testcase classname="tests/steps/remix.spec.ts" name="Remix Steps &gt; can setup remix ts root file with links" time="0.0310000000">
         </testcase>
     </testsuite>
-    <testsuite name="tests/commands/init.spec.ts" timestamp="2022-06-18T12:29:32.196Z" hostname="Kazis-MacBook-Pro.local" tests="6" failures="0" errors="0" skipped="0" time="0.1200000000">
-        <testcase classname="tests/commands/init.spec.ts" name="Init Command &gt; will ask to confirm if detected framework" time="0.0560000000">
+    <testsuite name="tests/main.spec.ts" timestamp="2022-06-19T09:21:53.291Z" hostname="Kazis-MacBook-Pro.local" tests="1" failures="0" errors="0" skipped="0" time="0.0100000000">
+        <testcase classname="tests/main.spec.ts" name="Main &gt; will setup the cli app" time="0.0080000000">
         </testcase>
-        <testcase classname="tests/commands/init.spec.ts" name="Init Command &gt; will ask to select framework if detected but not confirmed" time="0.0180000000">
+    </testsuite>
+    <testsuite name="tests/commands/init.spec.ts" timestamp="2022-06-19T09:21:53.292Z" hostname="Kazis-MacBook-Pro.local" tests="6" failures="0" errors="0" skipped="0" time="0.0940000000">
+        <testcase classname="tests/commands/init.spec.ts" name="Init Command &gt; will ask to confirm if detected framework" time="0.0590000000">
         </testcase>
-        <testcase classname="tests/commands/init.spec.ts" name="Init Command &gt; will ask to select a framework if unable to detect" time="0.0320000000">
+        <testcase classname="tests/commands/init.spec.ts" name="Init Command &gt; will ask to select framework if detected but not confirmed" time="0.0150000000">
+        </testcase>
+        <testcase classname="tests/commands/init.spec.ts" name="Init Command &gt; will ask to select a framework if unable to detect" time="0.0110000000">
         </testcase>
         <testcase classname="tests/commands/init.spec.ts" name="Init Command &gt; can exit out of confirming detected framework" time="0.0020000000">
         </testcase>
-        <testcase classname="tests/commands/init.spec.ts" name="Init Command &gt; can exit out of selecting a framework" time="0.0020000000">
+        <testcase classname="tests/commands/init.spec.ts" name="Init Command &gt; can exit out of selecting a framework" time="0.0010000000">
         </testcase>
-        <testcase classname="tests/commands/init.spec.ts" name="Init Command &gt; can handle something going wrong processing the framework" time="0.0030000000">
+        <testcase classname="tests/commands/init.spec.ts" name="Init Command &gt; can handle something going wrong processing the framework" time="0.0010000000">
         </testcase>
     </testsuite>
 </testsuites>

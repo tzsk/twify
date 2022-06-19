@@ -3,6 +3,14 @@ import path from 'path';
 import j from 'jscodeshift';
 import chalk from 'chalk';
 
+export async function movePostCSS() {
+  const source = path.join(process.cwd(), 'postcss.config.js');
+  const destination = path.join(process.cwd(), 'postcss.config.cjs');
+  if (fs.existsSync(source)) {
+    await fs.move(source, destination, { overwrite: true });
+  }
+}
+
 export async function setupConfigFile() {
   const filename = 'svelte.config.js';
   const configFile = path.join(process.cwd(), filename);
