@@ -14,7 +14,7 @@ export async function movePostCSS() {
 export async function setupConfigFile() {
   const filename = 'svelte.config.js';
   const configFile = path.join(process.cwd(), filename);
-  console.log(`\nSetting up ${chalk.blue.bold(filename)}...`);
+  console.log(`\n- Setting up ${chalk.blue.bold(filename)}...`);
 
   const code = await fs.readFile(configFile, 'utf8');
   const ast = j.withParser('flow')(code);
@@ -52,7 +52,7 @@ export async function setupLayoutFile() {
     return;
   }
 
-  console.log(`\nCreating ${chalk.blue.bold(location)}...`);
+  console.log(`\n- Creating ${chalk.blue.bold(location)}...`);
   await fs.ensureFile(file);
 
   const opening = ts ? `<script lang="ts">` : `<script>`;

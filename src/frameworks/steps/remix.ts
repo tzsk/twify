@@ -13,7 +13,7 @@ export async function setupPackageJson() {
     };
 
     console.log(
-      `\nSetting up scripts in ${chalk.blue.bold('package.json')}...`
+      `\n- Setting up scripts in ${chalk.blue.bold('package.json')}...`
     );
     console.log(
       chalk.blue(
@@ -42,7 +42,7 @@ export async function setupIndexFile() {
   const filename = `root.${type}x`;
   const filePath = path.join(process.cwd(), 'app', filename);
   const code = await fs.readFile(filePath, 'utf8');
-  console.log(`\nSetting up ${chalk.blue.bold(`app/${filename}`)}...`);
+  console.log(`\n- Setting up ${chalk.blue.bold(`app/${filename}`)}...`);
 
   const parse = j.withParser('flow');
   const ast = parse(code);

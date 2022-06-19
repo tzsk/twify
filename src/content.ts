@@ -22,7 +22,11 @@ export function addContentToCode(code: string, content: string[]): string {
 }
 
 export async function setupContent({ content }: Framework) {
-  console.log(`\nConfiguring ${chalk.blue.bold(content.name)} content...`);
+  console.log(
+    `\n${chalk.green('✔')} Configuring ${chalk.blue.bold(
+      content.name
+    )} content...`
+  );
   console.log(chalk.blue(`- ${content.files.join('\n- ')}`));
 
   const contentPath = path.join(process.cwd(), content.name);

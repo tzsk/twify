@@ -75,7 +75,7 @@ function _preparePostCss(config: j.Collection) {
 export async function setupConfigFile() {
   const filename = 'nuxt.config.ts';
   const configFile = path.join(process.cwd(), filename);
-  console.log(`\nSetting up ${chalk.blue.bold(filename)}...`);
+  console.log(`\n- Setting up ${chalk.blue.bold(filename)}...`);
 
   const code = await fs.readFile(configFile, 'utf8');
   const ast = j.withParser('flow')(code);

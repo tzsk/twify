@@ -1,6 +1,6 @@
 {
   "name": "twify",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Tool to Setup TailwindCSS in your Project with a Single Command",
   "bin": {
     "twify": "dist/main.js"
@@ -41,7 +41,8 @@
     "enquirer": "^2.3.6",
     "fs-extra": "^10.1.0",
     "gradient-string": "^2.0.1",
-    "jscodeshift": "^0.13.1"
+    "jscodeshift": "^0.13.1",
+    "ora": "^6.1.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
