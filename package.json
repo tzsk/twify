@@ -37,7 +37,7 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^5.0.1",
-    "commander": "^9.2.0",
+    "commander": "^9.3.0",
     "enquirer": "^2.3.6",
     "fs-extra": "^10.1.0",
     "gradient-string": "^2.0.1",
