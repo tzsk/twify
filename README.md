@@ -35,9 +35,9 @@ Below are the list of Supported Projects,
 | Laravel Mix      | :o: WIP            | :o: WIP            |
 | Laravel Vite     | :o: WIP            | :o: WIP            |
 | Gatsby           | :o: WIP            | :o: WIP            |
-| Vite             | :o: WIP            | :o: WIP            |
-| Angular          | :o: WIP            | :o: WIP            |
-| Create React App | :o: WIP            | :o: WIP            |
+| Vite             | :white_check_mark: | :white_check_mark: |
+| Angular          | :white_check_mark: | :white_check_mark: |
+| Create React App | :white_check_mark: | :white_check_mark: |
 
 
 ## :microscope: Testing
