@@ -18,14 +18,23 @@ describe('Helpers', () => {
     pkg.mockReturnValue({ dependencies: { '@remix-run/react': '1.0.0' } });
     expect(detectFramework()).toBe('Remix');
 
+    pkg.mockReturnValue({ dependencies: { '@angular/core': '1.0.0' } });
+    expect(detectFramework()).toBe('Angular');
+
     pkg.mockReturnValue({ dependencies: { nuxt: '1.0.0' } });
     expect(detectFramework()).toBe('Nuxt2');
+
+    pkg.mockReturnValue({ dependencies: { 'react-scripts': '1.0.0' } });
+    expect(detectFramework()).toBe('CreateReactApp');
 
     pkg.mockReturnValue({ devDependencies: { '@sveltejs/kit': '1.0.0' } });
     expect(detectFramework()).toBe('SvelteKit');
 
     pkg.mockReturnValue({ devDependencies: { nuxt: '1.0.0' } });
     expect(detectFramework()).toBe('Nuxt3');
+
+    pkg.mockReturnValue({ devDependencies: { vite: '1.0.0' } });
+    expect(detectFramework()).toBe('Vite');
   });
 
   it('can detect installer', () => {

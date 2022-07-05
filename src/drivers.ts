@@ -6,4 +6,7 @@ export const drivers = {
   Nuxt3: (): DriverImport => import('./frameworks/nuxt3'),
   Remix: (): DriverImport => import('./frameworks/remix'),
   SvelteKit: (): DriverImport => import('./frameworks/sveltekit'),
+  Vite: (): DriverImport => import('./frameworks/vite'),
+  Angular: (): DriverImport => import('./frameworks/angular'),
+  CreateReactApp: (): DriverImport => import('./frameworks/cra'),
 };
