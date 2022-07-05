@@ -116,3 +116,4 @@ out
 index.html
 .DS_Store
 dist/
+tests/results.xml

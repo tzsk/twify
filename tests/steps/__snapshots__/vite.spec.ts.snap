@@ -1,0 +1,51 @@
+// Vitest Snapshot v1
+
+exports[`Vite Steps > can setup vite jsx project 1`] = `
+"import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import './index.css'
+
+import \\"./style.css\\";
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)"
+`;
+
+exports[`Vite Steps > can setup vite tsx project 1`] = `
+"import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import './index.css'
+
+import \\"./style.css\\";
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)"
+`;
+
+exports[`Vite Steps > can setup vite vue js project 1`] = `
+"import { createApp } from 'vue'
+import App from './App.vue'
+
+import \\"./style.css\\";
+
+createApp(App).mount('#app')
+"
+`;
+
+exports[`Vite Steps > can setup vite vue ts project 1`] = `
+"import { createApp } from 'vue'
+import App from './App.vue'
+
+import \\"./style.css\\";
+
+createApp(App).mount('#app')
+"
+`;

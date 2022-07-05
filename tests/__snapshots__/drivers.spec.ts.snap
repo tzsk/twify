@@ -126,3 +126,69 @@ exports[`Drivers > has a list of drivers 5`] = `
   ],
 }
 `;
+
+exports[`Drivers > has a list of drivers 6`] = `
+{
+  "content": {
+    "files": [
+      "./index.html",
+      "./src/**/*.{vue,js,ts,jsx,tsx}",
+    ],
+    "name": "tailwind.config.js",
+  },
+  "cssLocation": "./src/style.css",
+  "initCommands": [
+    "npx tailwindcss init -p",
+  ],
+  "requiredDependencies": [
+    "tailwindcss",
+    "postcss",
+    "autoprefixer",
+  ],
+  "steps": [
+    [Function],
+  ],
+}
+`;
+
+exports[`Drivers > has a list of drivers 7`] = `
+{
+  "content": {
+    "files": [
+      "./src/**/*.{html,ts}",
+    ],
+    "name": "tailwind.config.js",
+  },
+  "cssLocation": "./src/styles.css",
+  "initCommands": [
+    "npx tailwindcss init",
+  ],
+  "requiredDependencies": [
+    "tailwindcss",
+    "postcss",
+    "autoprefixer",
+  ],
+  "steps": [],
+}
+`;
+
+exports[`Drivers > has a list of drivers 8`] = `
+{
+  "content": {
+    "files": [
+      "./src/**/*.{js,jsx,ts,tsx}",
+    ],
+    "name": "tailwind.config.js",
+  },
+  "cssLocation": "./src/index.css",
+  "initCommands": [
+    "npx tailwindcss init -p",
+  ],
+  "requiredDependencies": [
+    "tailwindcss",
+    "postcss",
+    "autoprefixer",
+  ],
+  "steps": [],
+}
+`;

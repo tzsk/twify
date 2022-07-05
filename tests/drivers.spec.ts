@@ -9,6 +9,9 @@ describe('Drivers', () => {
       'Nuxt3',
       'Remix',
       'SvelteKit',
+      'Vite',
+      'Angular',
+      'CreateReactApp',
     ] as (keyof typeof drivers)[];
     expect(driversList).toEqual(expectedDrivers);
 

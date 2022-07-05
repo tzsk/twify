@@ -20,8 +20,11 @@ export function detectFramework(): Driver | undefined {
   if (dependencies['next']) return 'NextJS';
   if (dependencies['@remix-run/react']) return 'Remix';
   if (dependencies['nuxt']) return 'Nuxt2';
+  if (dependencies['@angular/core']) return 'Angular';
+  if (dependencies['react-scripts']) return 'CreateReactApp';
   if (devDependencies['@sveltejs/kit']) return 'SvelteKit';
   if (devDependencies['nuxt']) return 'Nuxt3';
+  if (devDependencies['vite']) return 'Vite';
 }
 
 export function detectInstaller(): string {
