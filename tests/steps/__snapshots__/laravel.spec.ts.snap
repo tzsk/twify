@@ -1,0 +1,12 @@
+// Vitest Snapshot v1
+
+exports[`Vite Steps > can setup laravel project 1`] = `
+"<html>
+  <head>
+    <title>Laravel</title>
+  	@vite(['resources/css/app.css'])
+	</head>
+  <body>
+  </body>
+</html>"
+`;
