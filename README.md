@@ -32,12 +32,11 @@ Below are the list of Supported Projects,
 | Nuxt 2           | :white_check_mark: | :white_check_mark: |
 | Nuxt 3           | :white_check_mark: | :white_check_mark: |
 | Svelte Kit       | :white_check_mark: | :white_check_mark: |
-| Laravel Mix      | :o: WIP            | :o: WIP            |
-| Laravel Vite     | :o: WIP            | :o: WIP            |
-| Gatsby           | :o: WIP            | :o: WIP            |
+| Laravel Vite     | :white_check_mark: | :white_check_mark: |
 | Vite             | :white_check_mark: | :white_check_mark: |
 | Angular          | :white_check_mark: | :white_check_mark: |
 | Create React App | :white_check_mark: | :white_check_mark: |
+| Gatsby           | :o: WIP            | :o: WIP            |
 
 
 ## :microscope: Testing

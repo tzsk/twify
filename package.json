@@ -1,6 +1,6 @@
 {
   "name": "twify",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A Tool to Setup TailwindCSS in your Project with a Single Command",
   "bin": {
     "twify": "dist/main.js"

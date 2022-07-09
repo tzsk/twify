@@ -132,7 +132,7 @@ exports[`Drivers > has a list of drivers 6`] = `
   "content": {
     "files": [
       "./index.html",
-      "./src/**/*.{vue,js,ts,jsx,tsx}",
+      "./src/**/*.{vue,js,ts,jsx,tsx,svelte}",
     ],
     "name": "tailwind.config.js",
   },
@@ -190,5 +190,29 @@ exports[`Drivers > has a list of drivers 8`] = `
     "autoprefixer",
   ],
   "steps": [],
+}
+`;
+
+exports[`Drivers > has a list of drivers 9`] = `
+{
+  "content": {
+    "files": [
+      "./resources/**/*.blade.php",
+      "./resources/**/*.{js,jsx,ts,tsx,vue,svelte}",
+    ],
+    "name": "tailwind.config.js",
+  },
+  "cssLocation": "./resources/css/app.css",
+  "initCommands": [
+    "npx tailwindcss init -p",
+  ],
+  "requiredDependencies": [
+    "tailwindcss",
+    "postcss",
+    "autoprefixer",
+  ],
+  "steps": [
+    [Function],
+  ],
 }
 `;
