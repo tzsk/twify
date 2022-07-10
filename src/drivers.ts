@@ -9,4 +9,5 @@ export const drivers = {
   Vite: (): DriverImport => import('./frameworks/vite'),
   Angular: (): DriverImport => import('./frameworks/angular'),
   CreateReactApp: (): DriverImport => import('./frameworks/cra'),
+  LaravelVite: (): DriverImport => import('./frameworks/laravel'),
 };

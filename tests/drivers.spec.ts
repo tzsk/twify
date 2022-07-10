@@ -12,6 +12,7 @@ describe('Drivers', () => {
       'Vite',
       'Angular',
       'CreateReactApp',
+      'LaravelVite',
     ] as (keyof typeof drivers)[];
     expect(driversList).toEqual(expectedDrivers);
 

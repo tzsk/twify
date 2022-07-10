@@ -7,7 +7,7 @@ const Vite: Framework = {
   cssLocation: './src/style.css',
   content: {
     name: 'tailwind.config.js',
-    files: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+    files: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx,svelte}'],
   },
   steps: [setupMainFile],
 };

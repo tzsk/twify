@@ -27,6 +27,11 @@ describe('Helpers', () => {
     pkg.mockReturnValue({ dependencies: { 'react-scripts': '1.0.0' } });
     expect(detectFramework()).toBe('CreateReactApp');
 
+    pkg.mockReturnValue({
+      devDependencies: { 'laravel-vite-plugin': '1.0.0' },
+    });
+    expect(detectFramework()).toBe('LaravelVite');
+
     pkg.mockReturnValue({ devDependencies: { '@sveltejs/kit': '1.0.0' } });
     expect(detectFramework()).toBe('SvelteKit');
 
