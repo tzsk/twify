@@ -15,10 +15,34 @@ Here is a screen grab of how it looks.
 
 ## :gift: Installation
 
-Scaffold a new project of your choice then simply run,
+Scaffold a new project of your choice of framework, then simply run,
 
 ```sh
 npx twify init
+```
+
+### Command Options
+
+Other than `--help` you can also do more.
+
+#### Preserve Existing CSS
+
+By default, twify will replace your existing CSS and only keep Tailwind. But if you want to preserve the existing CSS you can use the `-p, --preserve` flag.
+
+```sh
+npx twify init -p
+# OR
+npx twify init --preserve
+```
+
+#### Force Package Manager for Installation
+
+By default, twify will try to guess the Package Manager for installing dependencies in your project but if you want to force your standard or you don't want to take any chances you can use the `-i, --installer` option.
+
+```sh
+npx twify init -i yarn # Options: npm, yarn, pnpm
+# OR
+npx twify init --installer yarn
 ```
 
 ## :star: Supported Projects

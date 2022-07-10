@@ -4,8 +4,9 @@ import gradient from 'gradient-string';
 import { drivers } from '../drivers';
 import { detectFramework } from '../helpers';
 import { handle } from '../processor';
+import { InitOptions } from '../types';
 
-export const InitCommand = async () => {
+export const InitCommand = async (options: InitOptions = {}) => {
   console.log(gradient.fruit('\n\n🔥 Welcome to Twify!\n'));
   console.log(
     chalk.blue.bold(
@@ -65,7 +66,7 @@ export const InitCommand = async () => {
 
   console.log(chalk.cyan.bold('\n🚀 Applying fresh quote of paint...'));
   try {
-    await handle(framework);
+    await handle(framework, options);
 
     console.log(gradient.morning('\n✨ You are all set with TailwindCSS! \n'));
   } catch (e) {

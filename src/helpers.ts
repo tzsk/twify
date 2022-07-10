@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import { exec } from 'child_process';
 import path from 'path';
-import { Driver } from './types';
+import { Driver, PackageManager } from './types';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -27,10 +27,21 @@ export function detectFramework(): Driver | undefined {
   if (devDependencies['vite']) return 'Vite';
 }
 
-export function detectInstaller(): string {
-  return fs.existsSync(path.join(process.cwd(), 'yarn.lock'))
-    ? 'yarn add --dev'
-    : 'npm install --save-dev';
+export function installerPrefix(manager?: PackageManager): string {
+  const npm = 'npm install --save-dev';
+  const yarn = 'yarn add --dev';
+  const pnpm = 'pnpm install --save-dev';
+
+  switch (manager) {
+    case 'npm':
+      return npm;
+    case 'yarn':
+      return yarn;
+    case 'pnpm':
+      return pnpm;
+    default:
+      return fs.existsSync(path.join(process.cwd(), 'yarn.lock')) ? yarn : npm;
+  }
 }
 
 export function runCommand(cmd: string) {

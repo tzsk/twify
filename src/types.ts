@@ -1,5 +1,12 @@
 import { drivers } from './drivers';
 
+export type PackageManager = 'npm' | 'yarn' | 'pnpm';
+
+export interface InitOptions {
+  preserve?: boolean;
+  installer?: PackageManager;
+}
+
 export interface Step {
   (): Promise<void>;
 }

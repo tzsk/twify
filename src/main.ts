@@ -13,6 +13,11 @@ async function runApp(app: Command) {
 
   app
     .command('init')
+    .option(
+      '-i, --installer <installer>',
+      'Explicitly set the package manager to use'
+    )
+    .option('-p, --preserve', 'Preserve existing CSS')
     .description('Initialize TailwindCSS in the current project')
     .action(InitCommand);
 

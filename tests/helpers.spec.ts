@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import { exec } from 'child_process';
-import { detectFramework, detectInstaller, runCommand } from '../src/helpers';
+import { detectFramework, installerPrefix, runCommand } from '../src/helpers';
 
 vi.mock('child_process');
 
@@ -41,10 +41,14 @@ describe('Helpers', () => {
     const dep = vi.spyOn(fs, 'existsSync');
 
     dep.mockReturnValue(true);
-    expect(detectInstaller()).toBe('yarn add --dev');
+    expect(installerPrefix()).toBe('yarn add --dev');
 
     dep.mockReturnValue(false);
-    expect(detectInstaller()).toBe('npm install --save-dev');
+    expect(installerPrefix()).toBe('npm install --save-dev');
+
+    expect(installerPrefix('pnpm')).toBe('pnpm install --save-dev');
+    expect(installerPrefix('npm')).toBe('npm install --save-dev');
+    expect(installerPrefix('yarn')).toBe('yarn add --dev');
   });
 
   it('can run command', async () => {

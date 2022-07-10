@@ -1,14 +1,14 @@
 import fs from 'fs-extra';
 import chalk from 'chalk';
-import { Framework } from './types';
+import { Framework, InitOptions } from './types';
 import { CSS_STUB } from './constants';
-import { detectInstaller, runCommand } from './helpers';
+import { installerPrefix, runCommand } from './helpers';
 import { setupContent } from './content';
 import ora from 'ora';
 
-export async function handle(framework: Framework) {
+export async function handle(framework: Framework, options: InitOptions) {
   const { requiredDependencies, initCommands, cssLocation, steps } = framework;
-  const installer = detectInstaller();
+  const installer = installerPrefix(options.installer);
 
   // Install required dependencies
   if (requiredDependencies.length) {
@@ -39,7 +39,10 @@ export async function handle(framework: Framework) {
   );
   fs.ensureFileSync(cssLocation);
   const exitingCss = fs.readFileSync(cssLocation, 'utf8');
-  fs.writeFileSync(cssLocation, `${exitingCss}\n\n${CSS_STUB}`);
+  const updatedCss = !options.preserve
+    ? CSS_STUB
+    : `${exitingCss}\n\n${CSS_STUB}`;
+  fs.writeFileSync(cssLocation, updatedCss);
 
   await setupContent(framework);
 
