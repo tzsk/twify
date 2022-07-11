@@ -1,11 +1,16 @@
-# :unicorn: Twify
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/13273787/178304155-23c2e2bd-4540-4b0a-bd51-cef236079bc9.jpg" alt="Logo Twify" />
+</p>
 
-![Build](https://img.shields.io/github/workflow/status/tzsk/twify/CI/main?logo=github&style=for-the-badge)
-[![npm](https://img.shields.io/npm/v/twify?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/twify)
-[![npm](https://img.shields.io/npm/dt/twify?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/twify)
-![GitHub top language](https://img.shields.io/github/languages/top/tzsk/twify?logo=typescript&style=for-the-badge)
-
-A simple tool to setup [Tailwind CSS](https://tailwindcss.com/) in your fresh project with a Single Command.
+<p align="center">
+  <a href="https://github.com/tzsk/twify/actions"><img src="https://img.shields.io/github/workflow/status/tzsk/twify/CI/main?logo=github&style=for-the-badge" alt="Build Status"></a>
+  <a href="https://www.npmjs.com/package/twify"><img src="https://img.shields.io/npm/dt/twify?logo=npm&style=for-the-badge" alt="Total Downloads"></a>
+  <a href="https://www.npmjs.com/package/twify"><img src="https://img.shields.io/npm/v/twify?logo=npm&style=for-the-badge" alt="Latest Stable Version"></a>
+  <a href="https://github.com/tzsk/twify"><img src="https://img.shields.io/github/languages/top/tzsk/twify?logo=typescript&style=for-the-badge" alt="Language"></a>
+</p>
+<p align="center">
+  A simple tool to setup <a href="https://tailwindcss.com/">Tailwind CSS</a> in your fresh project with a Single Command.
+</p>
 
 ## :fire: How It Works
 
