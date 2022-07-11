@@ -12,10 +12,6 @@
   A simple tool to setup <a href="https://tailwindcss.com/">Tailwind CSS</a> in your fresh project with a Single Command.
 </p>
 
-## :fire: How It Works
-
-Here is a screen grab of how it looks.
-
 ![Twify](./assets/twify.png)
 
 ## :gift: Installation
