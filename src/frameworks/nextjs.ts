@@ -1,7 +1,13 @@
 import { Framework } from '../types';
 
 const NextJS: Framework = {
-  requiredDependencies: ['tailwindcss', 'postcss', 'autoprefixer'],
+  requiredDependencies: [
+    'tailwindcss',
+    'postcss',
+    'autoprefixer',
+    'prettier',
+    'prettier-plugin-tailwindcss',
+  ],
   initCommands: ['npx tailwindcss init -p'],
   cssLocation: './styles/globals.css',
   content: {

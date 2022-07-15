@@ -7,6 +7,8 @@ const NuxtJS: Framework = {
     'postcss@latest',
     'autoprefixer@latest',
     '@nuxt/postcss8',
+    'prettier',
+    'prettier-plugin-tailwindcss',
   ],
   initCommands: ['npx tailwindcss init'],
   cssLocation: './assets/css/main.css',

@@ -17,6 +17,8 @@ exports[`Drivers > has a list of drivers 1`] = `
     "tailwindcss",
     "postcss",
     "autoprefixer",
+    "prettier",
+    "prettier-plugin-tailwindcss",
   ],
   "steps": [],
 }
@@ -43,6 +45,8 @@ exports[`Drivers > has a list of drivers 2`] = `
     "postcss@latest",
     "autoprefixer@latest",
     "@nuxt/postcss8",
+    "prettier",
+    "prettier-plugin-tailwindcss",
   ],
   "steps": [
     [Function],
@@ -70,6 +74,8 @@ exports[`Drivers > has a list of drivers 3`] = `
     "tailwindcss",
     "postcss@latest",
     "autoprefixer@latest",
+    "prettier",
+    "prettier-plugin-tailwindcss",
   ],
   "steps": [
     [Function],
@@ -93,6 +99,8 @@ exports[`Drivers > has a list of drivers 4`] = `
     "tailwindcss",
     "postcss",
     "autoprefixer",
+    "prettier",
+    "prettier-plugin-tailwindcss",
   ],
   "steps": [
     [Function],
@@ -118,6 +126,8 @@ exports[`Drivers > has a list of drivers 5`] = `
     "postcss",
     "autoprefixer",
     "svelte-preprocess",
+    "prettier",
+    "prettier-plugin-tailwindcss",
   ],
   "steps": [
     [Function],
@@ -144,6 +154,8 @@ exports[`Drivers > has a list of drivers 6`] = `
     "tailwindcss",
     "postcss",
     "autoprefixer",
+    "prettier",
+    "prettier-plugin-tailwindcss",
   ],
   "steps": [
     [Function],
@@ -167,6 +179,8 @@ exports[`Drivers > has a list of drivers 7`] = `
     "tailwindcss",
     "postcss",
     "autoprefixer",
+    "prettier",
+    "prettier-plugin-tailwindcss",
   ],
   "steps": [],
 }
@@ -188,6 +202,8 @@ exports[`Drivers > has a list of drivers 8`] = `
     "tailwindcss",
     "postcss",
     "autoprefixer",
+    "prettier",
+    "prettier-plugin-tailwindcss",
   ],
   "steps": [],
 }
@@ -210,6 +226,8 @@ exports[`Drivers > has a list of drivers 9`] = `
     "tailwindcss",
     "postcss",
     "autoprefixer",
+    "prettier",
+    "prettier-plugin-tailwindcss",
   ],
   "steps": [
     [Function],
