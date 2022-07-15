@@ -2,13 +2,7 @@ import { Framework } from '../types';
 import { setupWelcomePage } from './steps/laravel';
 
 const Laravel: Framework = {
-  requiredDependencies: [
-    'tailwindcss',
-    'postcss',
-    'autoprefixer',
-    'prettier',
-    'prettier-plugin-tailwindcss',
-  ],
+  requiredDependencies: ['tailwindcss', 'postcss', 'autoprefixer'],
   initCommands: ['npx tailwindcss init -p'],
   cssLocation: './resources/css/app.css',
   content: {

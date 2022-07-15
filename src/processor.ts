@@ -21,6 +21,17 @@ export async function handle(framework: Framework, options: InitOptions) {
     console.log(chalk.blue(`- ${requiredDependencies.join('\n- ')}`));
   }
 
+  // Installing Prettier Dependency
+  if (options.pretty) {
+    const prettierDependencies = ['prettier', 'prettier-plugin-tailwindcss'];
+    const plugin = chalk.blue.bold('Prettier Plugin');
+    const spinner = ora(`Configuring ${plugin}...`).start();
+    await runCommand(`${installer} ${prettierDependencies.join(' ')}`);
+    spinner.succeed();
+
+    console.log(chalk.blue(`- ${prettierDependencies.join('\n- ')}`));
+  }
+
   // Run init commands
   if (initCommands.length) {
     console.log(`\n`);
@@ -39,9 +50,7 @@ export async function handle(framework: Framework, options: InitOptions) {
   );
   fs.ensureFileSync(cssLocation);
   const exitingCss = fs.readFileSync(cssLocation, 'utf8');
-  const updatedCss = !options.preserve
-    ? CSS_STUB
-    : `${exitingCss}\n\n${CSS_STUB}`;
+  const updatedCss = !options.keep ? CSS_STUB : `${exitingCss}\n\n${CSS_STUB}`;
   fs.writeFileSync(cssLocation, updatedCss);
 
   await setupContent(framework);

@@ -11,8 +11,6 @@ const SvelteKit: Framework = {
     'postcss',
     'autoprefixer',
     'svelte-preprocess',
-    'prettier',
-    'prettier-plugin-tailwindcss',
   ],
   initCommands: ['npx tailwindcss init tailwind.config.cjs -p'],
   cssLocation: './src/app.css',

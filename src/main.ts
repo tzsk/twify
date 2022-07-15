@@ -17,7 +17,8 @@ async function runApp(app: Command) {
       '-i, --installer <installer>',
       'Explicitly set the package manager to use'
     )
-    .option('-p, --preserve', 'Preserve existing CSS')
+    .option('-k, --keep', 'Keep existing CSS')
+    .option('-p, --pretty', 'Configure Prettier Plugin')
     .description('Initialize TailwindCSS in the current project')
     .action(InitCommand);
 

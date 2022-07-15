@@ -2,13 +2,7 @@ import { Framework } from '../types';
 import { setupMainFile } from './steps/vite';
 
 const Vite: Framework = {
-  requiredDependencies: [
-    'tailwindcss',
-    'postcss',
-    'autoprefixer',
-    'prettier',
-    'prettier-plugin-tailwindcss',
-  ],
+  requiredDependencies: ['tailwindcss', 'postcss', 'autoprefixer'],
   initCommands: ['npx tailwindcss init -p'],
   cssLocation: './src/style.css',
   content: {
