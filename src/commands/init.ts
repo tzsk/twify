@@ -15,8 +15,8 @@ export const InitCommand = async (options: InitOptions = {}) => {
   );
 
   console.log(
-    chalk.yellow.bold(
-      `🚫 It might reconfigure your existing setup. Please only use it for new projects.\n`
+    chalk.underline.yellow.bold(
+      `❯ It might reconfigure any existing setup you might have.\n❯ It is advised to be used in a new project.\n`
     )
   );
 

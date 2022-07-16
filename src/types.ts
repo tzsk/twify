@@ -3,7 +3,8 @@ import { drivers } from './drivers';
 export type PackageManager = 'npm' | 'yarn' | 'pnpm';
 
 export interface InitOptions {
-  preserve?: boolean;
+  keep?: boolean;
+  pretty?: boolean;
   installer?: PackageManager;
 }
 

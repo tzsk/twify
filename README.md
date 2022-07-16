@@ -26,14 +26,14 @@ npx twify init
 
 Other than `--help` you can also do more.
 
-#### Preserve Existing CSS
+#### Keep Existing CSS
 
-By default, twify will replace your existing CSS and only keep Tailwind. But if you want to preserve the existing CSS you can use the `-p, --preserve` flag.
+By default, twify will replace your existing CSS and only keep Tailwind. But if you want to keep the existing CSS you can use the `-k, --keep` flag.
 
 ```sh
-npx twify init -p
+npx twify init -k
 # OR
-npx twify init --preserve
+npx twify init --keep
 ```
 
 #### Force Package Manager for Installation
@@ -44,6 +44,16 @@ By default, twify will try to guess the Package Manager for installing dependenc
 npx twify init -i yarn # Options: npm, yarn, pnpm
 # OR
 npx twify init --installer yarn
+```
+
+#### Configure Tailwind Prettier
+
+Optionally if you want to install the Tailwind Prettier Plugin also, you can opt for `-p, --pretty` flag. Because this plugin doesn't play well with other prettier plugins it is kept under the flag not a default.
+
+```sh
+npx twify init -p
+# OR
+npx twify init --pretty
 ```
 
 ## :star: Supported Projects
