@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import chalk from 'chalk';
 import { Framework, InitOptions } from './types';
-import { CSS_STUB } from './constants';
+import { CSS_STUB, prettierDependencies } from './constants';
 import { installerPrefix, runCommand } from './helpers';
 import { setupContent } from './content';
 import ora from 'ora';
@@ -12,7 +12,7 @@ export async function handle(framework: Framework, options: InitOptions) {
 
   // Install required dependencies
   if (requiredDependencies.length) {
-    console.log('\n');
+    console.log('');
 
     const spinner = ora('Installing Required Dependencies...').start();
     await runCommand(`${installer} ${requiredDependencies.join(' ')}`);
@@ -23,8 +23,8 @@ export async function handle(framework: Framework, options: InitOptions) {
 
   // Installing Prettier Dependency
   if (options.pretty) {
-    const prettierDependencies = ['prettier', 'prettier-plugin-tailwindcss'];
-    const plugin = chalk.blue.bold('Prettier Plugin');
+    console.log('');
+    const plugin = chalk.blue.bold('Tailwind Prettier Plugin');
     const spinner = ora(`Configuring ${plugin}...`).start();
     await runCommand(`${installer} ${prettierDependencies.join(' ')}`);
     spinner.succeed();
@@ -34,7 +34,7 @@ export async function handle(framework: Framework, options: InitOptions) {
 
   // Run init commands
   if (initCommands.length) {
-    console.log(`\n`);
+    console.log('');
     const spinner = ora(
       'Initializing Tailwind & PostCSS Config Files...'
     ).start();
