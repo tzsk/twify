@@ -33,7 +33,7 @@ export async function setupContent({ content }: Framework) {
     .filter((file) => fs.existsSync(file));
 
   if (!contentPath) {
-    console.log(`\n Could not find ${chalk.blue.bold('Tailwind Config')} file`);
+    console.log(chalk.red('✘ Tailwind config not found.'));
     return;
   }
 
