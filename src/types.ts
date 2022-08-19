@@ -16,10 +16,7 @@ export interface Framework {
   requiredDependencies: string[];
   initCommands: string[];
   cssLocation: string;
-  content: {
-    name: string;
-    files: string[];
-  };
+  content: string[];
   steps: Step[];
 }
 

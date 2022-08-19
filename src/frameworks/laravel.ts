@@ -5,13 +5,10 @@ const Laravel: Framework = {
   requiredDependencies: ['tailwindcss', 'postcss', 'autoprefixer'],
   initCommands: ['npx tailwindcss init -p'],
   cssLocation: './resources/css/app.css',
-  content: {
-    name: 'tailwind.config.js',
-    files: [
-      './resources/**/*.blade.php',
-      './resources/**/*.{js,jsx,ts,tsx,vue,svelte}',
-    ],
-  },
+  content: [
+    './resources/**/*.blade.php',
+    './resources/**/*.{js,jsx,ts,tsx,vue,svelte}',
+  ],
   steps: [setupWelcomePage],
 };
 

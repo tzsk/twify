@@ -2,13 +2,10 @@
 
 exports[`Drivers > has a list of drivers 1`] = `
 {
-  "content": {
-    "files": [
-      "./pages/**/*.{js,ts,jsx,tsx}",
-      "./components/**/*.{js,ts,jsx,tsx}",
-    ],
-    "name": "tailwind.config.js",
-  },
+  "content": [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   "cssLocation": "./styles/globals.css",
   "initCommands": [
     "npx tailwindcss init -p",
@@ -24,16 +21,13 @@ exports[`Drivers > has a list of drivers 1`] = `
 
 exports[`Drivers > has a list of drivers 2`] = `
 {
-  "content": {
-    "files": [
-      "./components/**/*.{js,vue,ts}",
-      "./layouts/**/*.vue",
-      "./pages/**/*.vue",
-      "./plugins/**/*.{js,ts}",
-      "./nuxt.config.{js,ts}",
-    ],
-    "name": "tailwind.config.js",
-  },
+  "content": [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./nuxt.config.{js,ts}",
+  ],
   "cssLocation": "./assets/css/main.css",
   "initCommands": [
     "npx tailwindcss init",
@@ -52,16 +46,13 @@ exports[`Drivers > has a list of drivers 2`] = `
 
 exports[`Drivers > has a list of drivers 3`] = `
 {
-  "content": {
-    "files": [
-      "./components/**/*.{js,vue,ts}",
-      "./layouts/**/*.vue",
-      "./pages/**/*.vue",
-      "./app.vue",
-      "./plugins/**/*.{js,ts}",
-    ],
-    "name": "tailwind.config.js",
-  },
+  "content": [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./app.vue",
+    "./plugins/**/*.{js,ts}",
+  ],
   "cssLocation": "./assets/css/main.css",
   "initCommands": [
     "npx tailwindcss init",
@@ -79,12 +70,9 @@ exports[`Drivers > has a list of drivers 3`] = `
 
 exports[`Drivers > has a list of drivers 4`] = `
 {
-  "content": {
-    "files": [
-      "./app/**/*.{js,ts,jsx,tsx}",
-    ],
-    "name": "tailwind.config.js",
-  },
+  "content": [
+    "./app/**/*.{js,ts,jsx,tsx}",
+  ],
   "cssLocation": "./styles/app.css",
   "initCommands": [
     "npx tailwindcss init -p",
@@ -103,12 +91,9 @@ exports[`Drivers > has a list of drivers 4`] = `
 
 exports[`Drivers > has a list of drivers 5`] = `
 {
-  "content": {
-    "files": [
-      "./src/**/*.{html,js,svelte,ts}",
-    ],
-    "name": "tailwind.config.cjs",
-  },
+  "content": [
+    "./src/**/*.{html,js,svelte,ts}",
+  ],
   "cssLocation": "./src/app.css",
   "initCommands": [
     "npx tailwindcss init tailwind.config.cjs -p",
@@ -129,13 +114,10 @@ exports[`Drivers > has a list of drivers 5`] = `
 
 exports[`Drivers > has a list of drivers 6`] = `
 {
-  "content": {
-    "files": [
-      "./index.html",
-      "./src/**/*.{vue,js,ts,jsx,tsx,svelte}",
-    ],
-    "name": "tailwind.config.js",
-  },
+  "content": [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx,svelte}",
+  ],
   "cssLocation": "./src/style.css",
   "initCommands": [
     "npx tailwindcss init -p",
@@ -153,12 +135,9 @@ exports[`Drivers > has a list of drivers 6`] = `
 
 exports[`Drivers > has a list of drivers 7`] = `
 {
-  "content": {
-    "files": [
-      "./src/**/*.{html,ts}",
-    ],
-    "name": "tailwind.config.js",
-  },
+  "content": [
+    "./src/**/*.{html,ts}",
+  ],
   "cssLocation": "./src/styles.css",
   "initCommands": [
     "npx tailwindcss init",
@@ -174,12 +153,9 @@ exports[`Drivers > has a list of drivers 7`] = `
 
 exports[`Drivers > has a list of drivers 8`] = `
 {
-  "content": {
-    "files": [
-      "./src/**/*.{js,jsx,ts,tsx}",
-    ],
-    "name": "tailwind.config.js",
-  },
+  "content": [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   "cssLocation": "./src/index.css",
   "initCommands": [
     "npx tailwindcss init -p",
@@ -195,13 +171,10 @@ exports[`Drivers > has a list of drivers 8`] = `
 
 exports[`Drivers > has a list of drivers 9`] = `
 {
-  "content": {
-    "files": [
-      "./resources/**/*.blade.php",
-      "./resources/**/*.{js,jsx,ts,tsx,vue,svelte}",
-    ],
-    "name": "tailwind.config.js",
-  },
+  "content": [
+    "./resources/**/*.blade.php",
+    "./resources/**/*.{js,jsx,ts,tsx,vue,svelte}",
+  ],
   "cssLocation": "./resources/css/app.css",
   "initCommands": [
     "npx tailwindcss init -p",

@@ -9,16 +9,13 @@ const NuxtJS: Framework = {
   ],
   initCommands: ['npx tailwindcss init'],
   cssLocation: './assets/css/main.css',
-  content: {
-    name: 'tailwind.config.js',
-    files: [
-      './components/**/*.{js,vue,ts}',
-      './layouts/**/*.vue',
-      './pages/**/*.vue',
-      './app.vue',
-      './plugins/**/*.{js,ts}',
-    ],
-  },
+  content: [
+    './components/**/*.{js,vue,ts}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './app.vue',
+    './plugins/**/*.{js,ts}',
+  ],
   steps: [setupConfigFile],
 };
 
