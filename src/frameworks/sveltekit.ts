@@ -14,10 +14,7 @@ const SvelteKit: Framework = {
   ],
   initCommands: ['npx tailwindcss init tailwind.config.cjs -p'],
   cssLocation: './src/app.css',
-  content: {
-    name: 'tailwind.config.cjs',
-    files: ['./src/**/*.{html,js,svelte,ts}'],
-  },
+  content: ['./src/**/*.{html,js,svelte,ts}'],
   steps: [movePostCSS, setupConfigFile, setupLayoutFile],
 };
 

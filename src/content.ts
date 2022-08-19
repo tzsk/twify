@@ -3,6 +3,7 @@ import fs from 'fs-extra';
 import path from 'path';
 import j from 'jscodeshift';
 import { Framework } from './types';
+import { tailwindConfigFiles } from './constants';
 
 export function addContentToCode(code: string, content: string[]): string {
   const parse = j.withParser('flow');
@@ -23,16 +24,21 @@ export function addContentToCode(code: string, content: string[]): string {
 
 export async function setupContent({ content }: Framework) {
   console.log(
-    `\n${chalk.green('✔')} Configuring ${chalk.blue.bold(
-      content.name
-    )} content...`
+    `\n${chalk.green('✔')} Configuring ${chalk.blue.bold(content)} content...`
   );
-  console.log(chalk.blue(`- ${content.files.join('\n- ')}`));
+  console.log(chalk.blue(`- ${content.join('\n- ')}`));
 
-  const contentPath = path.join(process.cwd(), content.name);
+  const [contentPath] = tailwindConfigFiles
+    .map((file) => path.join(process.cwd(), file))
+    .filter((file) => fs.existsSync(file));
+
+  if (!contentPath) {
+    console.log(chalk.red('✘ Tailwind config not found.'));
+    return;
+  }
 
   const fileContent = await fs.readFile(contentPath, 'utf8');
-  const newContent = addContentToCode(fileContent, content.files);
+  const newContent = addContentToCode(fileContent, content);
 
   await fs.writeFile(contentPath, newContent);
 }

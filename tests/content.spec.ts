@@ -15,12 +15,12 @@ describe('Content Code Mod', () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     vi.spyOn(fs, 'readFile').mockResolvedValue(code as any);
     vi.stubGlobal('console', { ...console, log: vi.fn() });
+    vi.spyOn(fs, 'existsSync')
+      .mockResolvedValueOnce(true)
+      .mockResolvedValueOnce(false);
     const writeSpy = vi.spyOn(fs, 'writeFile').mockResolvedValue();
     const framework: Framework = {
-      content: {
-        name: 'fake-tailwind.js',
-        files: ['foo.{js,ts}', 'bar.{js,ts}'],
-      },
+      content: ['foo.{js,ts}', 'bar.{js,ts}'],
       requiredDependencies: [],
       initCommands: [],
       cssLocation: 'css',
@@ -28,11 +28,11 @@ describe('Content Code Mod', () => {
     };
 
     await setupContent(framework);
-    const modified = addContentToCode(code, framework.content.files);
+    const modified = addContentToCode(code, framework.content);
 
     const [fileName, content] = writeSpy.mock.lastCall || [];
 
-    expect(fileName).toMatch('fake-tailwind.js');
+    expect(fileName).toMatch('tailwind.config.js');
     expect(content).toMatchSnapshot();
     expect(content).toMatch(modified);
   });
