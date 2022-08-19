@@ -29,12 +29,8 @@ export async function setupContent({ content }: Framework) {
   console.log(chalk.blue(`- ${content.join('\n- ')}`));
 
   const [contentPath] = tailwindConfigFiles
-    .map((file) => {
-      const config = path.join(process.cwd(), file);
-
-      return fs.existsSync(config) ? config : null;
-    })
-    .filter(Boolean);
+    .map((file) => path.join(process.cwd(), file))
+    .filter((file) => fs.existsSync(file));
 
   if (!contentPath) {
     console.log(`\n Could not find ${chalk.blue.bold('Tailwind Config')} file`);
