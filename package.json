@@ -1,6 +1,6 @@
 {
   "name": "twify",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "description": "A Tool to Setup TailwindCSS in your Project with a Single Command",
   "bin": {
     "twify": "dist/main.js"
@@ -51,8 +51,7 @@
     "@types/node": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
-    "@vitest/coverage-c8": "^0.22.1",
-    "c8": "^7.11.2",
+    "@vitest/coverage-istanbul": "^0.22.1",
     "esbuild": "^0.15.2",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",

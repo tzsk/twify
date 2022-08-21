@@ -2,29 +2,23 @@ import chalk from 'chalk';
 import enquirer from 'enquirer';
 import gradient from 'gradient-string';
 import { drivers } from '../drivers';
-import { detectFramework } from '../helpers';
+import { detectFramework, intro } from '../helpers';
 import { handle } from '../processor';
 import { InitOptions } from '../types';
 
-export const InitCommand = async (options: InitOptions = {}) => {
-  console.log(gradient.fruit('\n\n🔥 Welcome to Twify!\n'));
-  console.log(
-    chalk.blue.bold(
-      '- A tool to help you setup your project with TailwindCSS.\n'
-    )
-  );
-
-  console.log(
-    chalk.underline.yellow.bold(
-      `❯ It might reconfigure any existing setup you might have.\n❯ It is advised to be used in a new project.\n`
-    )
-  );
+export const InitCommand = async (
+  options: InitOptions = {},
+  showIntro = true
+) => {
+  if (showIntro) {
+    intro(true);
+  }
 
   let detected = detectFramework();
 
   if (detected) {
     console.log(
-      chalk.green.bold(`🥳 Twify Detected ${detected} as your project.\n`)
+      chalk.green.bold(`\n🥳 Twify Detected ${detected} as your project.\n`)
     );
 
     try {
@@ -60,6 +54,16 @@ export const InitCommand = async (options: InitOptions = {}) => {
       console.log(chalk.red.bold('\n👋 Bye!'));
       return;
     }
+  }
+
+  if (options.keep === undefined) {
+    const result = await enquirer.prompt<{ keep: boolean }>({
+      type: 'confirm',
+      name: 'keep',
+      message: 'Keep Existing CSS?',
+      initial: false,
+    });
+    options.keep = result.keep;
   }
 
   const { default: framework } = await drivers[detected]();

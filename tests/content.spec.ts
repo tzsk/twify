@@ -3,8 +3,9 @@ import { addContentToCode, setupContent } from '../src/content';
 import fs from 'fs-extra';
 
 describe('Content Code Mod', () => {
-  afterEach(() => {
+  beforeEach(() => {
     vi.resetAllMocks();
+    vi.clearAllMocks();
   });
 
   it('can modify and add content in tailwind config', async () => {
@@ -16,8 +17,8 @@ describe('Content Code Mod', () => {
     vi.spyOn(fs, 'readFile').mockResolvedValue(code as any);
     vi.stubGlobal('console', { ...console, log: vi.fn() });
     vi.spyOn(fs, 'existsSync')
-      .mockResolvedValueOnce(true)
-      .mockResolvedValueOnce(false);
+      .mockReturnValueOnce(true)
+      .mockReturnValueOnce(false);
     const writeSpy = vi.spyOn(fs, 'writeFile').mockResolvedValue();
     const framework: Framework = {
       content: ['foo.{js,ts}', 'bar.{js,ts}'],
@@ -35,5 +36,26 @@ describe('Content Code Mod', () => {
     expect(fileName).toMatch('tailwind.config.js');
     expect(content).toMatchSnapshot();
     expect(content).toMatch(modified);
+  });
+
+  it('will exit if no tailwind css config file found', async () => {
+    const readSpy = vi.spyOn(fs, 'readFile').mockResolvedValue(Buffer.from(''));
+    vi.stubGlobal('console', { ...console, log: vi.fn() });
+    vi.spyOn(fs, 'existsSync')
+      .mockReturnValueOnce(false)
+      .mockReturnValueOnce(false);
+    const writeSpy = vi.spyOn(fs, 'writeFile').mockResolvedValue();
+    const framework: Framework = {
+      content: ['foo.{js,ts}', 'bar.{js,ts}'],
+      requiredDependencies: [],
+      initCommands: [],
+      cssLocation: 'css',
+      steps: [],
+    };
+
+    await setupContent(framework);
+
+    expect(readSpy).not.toHaveBeenCalled();
+    expect(writeSpy).not.toHaveBeenCalled();
   });
 });
