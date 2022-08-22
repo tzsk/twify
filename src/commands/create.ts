@@ -32,16 +32,15 @@ export const CreateCommand = async (args: string[]) => {
   const [manager, , , folder] = args;
 
   try {
-    const command = await resolveMakeCommand(args);
-    await runCommandSpawn(command, {
+    const { cmd, project } = await resolveMakeCommand(args);
+    await runCommandSpawn(cmd, {
       cwd,
       shell: true,
       stdio: 'inherit',
     });
 
     process.chdir(path.join(cwd, folder));
-    const intro = false;
-    await InitCommand({ installer: manager as PackageManager }, intro);
+    await InitCommand({ installer: manager as PackageManager }, project);
   } catch (e) {
     console.log(chalk.red('✘ Error creating project.'));
     console.log(e);

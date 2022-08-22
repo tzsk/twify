@@ -11,9 +11,9 @@ describe('Makers', () => {
 
   it('can make regular node projects', async () => {
     const expected = [
-      'node create vite@latest example',
-      'yarn create next-app@latest example',
-      'pnpm create remix@latest example',
+      { cmd: 'node create vite@latest example', project: 'Vite' },
+      { cmd: 'yarn create next-app@latest example', project: 'NextJS' },
+      { cmd: 'pnpm create remix@latest example', project: 'Remix' },
     ];
 
     const inputs = [
@@ -33,10 +33,13 @@ describe('Makers', () => {
   it('can make special type of projects', async () => {
     vi.mocked(runCommand).mockResolvedValue(true);
     const expected = [
-      'composer create-project laravel/laravel example',
-      'npx nuxi@latest init example',
-      'npx nuxi@latest init example',
-      'ng new example',
+      {
+        cmd: 'composer create-project laravel/laravel example',
+        project: 'LaravelVite',
+      },
+      { cmd: 'npx nuxi@latest init example', project: 'Nuxt3' },
+      { cmd: 'npx nuxi@latest init example', project: 'Nuxt3' },
+      { cmd: 'ng new example', project: 'Angular' },
     ];
 
     const inputs = [

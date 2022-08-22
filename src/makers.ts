@@ -1,41 +1,46 @@
 import { runCommand } from './helpers';
 import { PackageManager } from './types';
+import { drivers } from './drivers';
+
+export type Maker = { cmd: string; project: keyof typeof drivers };
+export type SpecialMaker = (packageManager: PackageManager) => Promise<Maker>;
+
 const globalInstallPrefix: Record<PackageManager, string> = {
   npm: 'npm install -g',
   yarn: 'yarn global add',
   pnpm: 'pnpm install -g',
 };
 
-const specialMakes: Record<
-  string,
-  (manager: PackageManager) => Promise<string>
-> = {
+const specialMakes: Record<string, SpecialMaker> = {
   angular: async (manager: PackageManager) => {
     await runCommand(`${globalInstallPrefix[manager]} @angular/cli`);
 
-    return 'ng new';
+    return { cmd: 'ng new', project: 'Angular' };
   },
   nuxt3: async () => {
-    return 'npx nuxi@latest init';
+    return { cmd: 'npx nuxi@latest init', project: 'Nuxt3' };
   },
   'nuxt-3': async () => {
-    return 'npx nuxi@latest init';
+    return { cmd: 'npx nuxi@latest init', project: 'Nuxt3' };
   },
   laravel: async () => {
-    return 'composer create-project laravel/laravel';
+    return {
+      cmd: 'composer create-project laravel/laravel',
+      project: 'LaravelVite',
+    };
   },
 };
 
-const regularMakes: Record<string, string> = {
-  vite: 'vite',
-  svelte: 'svelte',
-  remix: 'remix',
-  next: 'next-app',
-  react: 'react-app',
-  nuxt: 'nuxt-app',
+const regularMakes: Record<string, Maker> = {
+  vite: { cmd: 'vite', project: 'Vite' },
+  svelte: { cmd: 'svelte', project: 'SvelteKit' },
+  remix: { cmd: 'remix', project: 'Remix' },
+  next: { cmd: 'next-app', project: 'NextJS' },
+  react: { cmd: 'react-app', project: 'CreateReactApp' },
+  nuxt: { cmd: 'nuxt-app', project: 'Nuxt2' },
 };
 
-export async function resolveMakeCommand(args: string[]) {
+export async function resolveMakeCommand(args: string[]): Promise<Maker> {
   const [manager, create, project, folder, ...options] = args;
   const extra = options.join(' ');
 
@@ -46,7 +51,10 @@ export async function resolveMakeCommand(args: string[]) {
   if (special) {
     const final = await specialMakes[special](manager as PackageManager);
 
-    return `${final} ${folder} ${extra}`.trim();
+    return {
+      cmd: `${final.cmd} ${folder} ${extra}`.trim(),
+      project: final.project,
+    };
   }
 
   const regular = Object.keys(regularMakes).find((key) =>
@@ -54,7 +62,11 @@ export async function resolveMakeCommand(args: string[]) {
   );
 
   if (regular) {
-    return `${manager} ${create} ${regularMakes[regular]}@latest ${folder} ${extra}`.trim();
+    const app = regularMakes[regular];
+    return {
+      cmd: `${manager} ${create} ${app.cmd}@latest ${folder} ${extra}`.trim(),
+      project: app.project,
+    };
   }
 
   throw new Error(`Could not find a make command for ${project}`);

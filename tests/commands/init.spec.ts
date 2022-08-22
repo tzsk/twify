@@ -89,9 +89,19 @@ describe('Init Command', () => {
       .mockResolvedValueOnce({ keep: false });
     vi.mocked(handle).mockResolvedValue();
 
-    await InitCommand({ keep: false }, false);
-    expect(detectFramework).toHaveBeenCalledTimes(1);
+    await InitCommand({ keep: false }, 'NextJS');
+    expect(detectFramework).not.toHaveBeenCalled();
     expect(handle).toHaveBeenCalledTimes(1);
+  });
+
+  it('will show message if exited from keep css prompt', async () => {
+    vi.mocked(detectFramework).mockReturnValue('NextJS');
+    vi.spyOn(enquirer, 'prompt').mockRejectedValue(new Error());
+    vi.mocked(handle).mockResolvedValue();
+
+    await InitCommand({}, 'NextJS');
+    expect(detectFramework).not.toHaveBeenCalled();
+    expect(handle).not.toHaveBeenCalled();
   });
 
   it('can exit out of confirming detected framework', async () => {

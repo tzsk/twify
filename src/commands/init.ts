@@ -8,17 +8,18 @@ import { InitOptions } from '../types';
 
 export const InitCommand = async (
   options: InitOptions = {},
-  showIntro = true
+  forceProject?: keyof typeof drivers
 ) => {
-  if (showIntro) {
+  if (!forceProject) {
     intro(true);
   }
 
-  let detected = detectFramework();
+  let detected = forceProject || detectFramework();
+  console.log('\n');
 
-  if (detected) {
+  if (detected && !forceProject) {
     console.log(
-      chalk.green.bold(`\n🥳 Twify Detected ${detected} as your project.\n`)
+      chalk.green.bold(`🥳 Twify Detected ${detected} as your project.\n`)
     );
 
     try {
@@ -57,13 +58,18 @@ export const InitCommand = async (
   }
 
   if (options.keep === undefined) {
-    const result = await enquirer.prompt<{ keep: boolean }>({
-      type: 'confirm',
-      name: 'keep',
-      message: 'Keep Existing CSS?',
-      initial: false,
-    });
-    options.keep = result.keep;
+    try {
+      const result = await enquirer.prompt<{ keep: boolean }>({
+        type: 'confirm',
+        name: 'keep',
+        message: 'Keep Existing CSS?',
+        initial: false,
+      });
+      options.keep = result.keep;
+    } catch (e) {
+      console.log(chalk.red.bold('\n👋 Bye!'));
+      return;
+    }
   }
 
   const { default: framework } = await drivers[detected]();

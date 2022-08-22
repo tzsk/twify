@@ -17,7 +17,10 @@ describe('Create Command', () => {
 
   it('can create projects', async () => {
     vi.spyOn(process, 'chdir').mockReturnValue();
-    vi.mocked(resolveMakeCommand).mockResolvedValue('foo');
+    vi.mocked(resolveMakeCommand).mockResolvedValue({
+      cmd: 'foo',
+      project: 'Vite',
+    });
     const run = vi.mocked(runCommandSpawn).mockResolvedValue(true);
     const init = vi.mocked(InitCommand).mockResolvedValue();
     await CreateCommand(['npm', 'create', 'vite', 'example']);
@@ -27,11 +30,14 @@ describe('Create Command', () => {
       shell: true,
       stdio: 'inherit',
     });
-    expect(init).toHaveBeenCalledWith({ installer: 'npm' }, false);
+    expect(init).toHaveBeenCalledWith({ installer: 'npm' }, 'Vite');
   });
 
   it('can may fail to create projects', async () => {
-    vi.mocked(resolveMakeCommand).mockResolvedValue('foo');
+    vi.mocked(resolveMakeCommand).mockResolvedValue({
+      cmd: 'foo',
+      project: 'Vite',
+    });
     const run = vi.mocked(runCommandSpawn).mockRejectedValue(new Error('foo'));
     const init = vi.mocked(InitCommand).mockResolvedValue();
     await CreateCommand(['npm', 'create', 'vite', 'example']);
