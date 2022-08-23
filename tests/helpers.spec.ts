@@ -1,12 +1,32 @@
 import fs from 'fs-extra';
-import { exec } from 'child_process';
-import { detectFramework, installerPrefix, runCommand } from '../src/helpers';
+import { exec, spawn } from 'child_process';
+import {
+  detectFramework,
+  installerPrefix,
+  intro,
+  runCommand,
+  runCommandSpawn,
+} from '../src/helpers';
+import { EventEmitter } from 'stream';
 
 vi.mock('child_process');
 
 describe('Helpers', () => {
-  afterEach(() => {
+  beforeEach(() => {
     vi.resetAllMocks();
+    vi.clearAllMocks();
+  });
+
+  it('can show intro with warning', () => {
+    const log = vi.spyOn(console, 'log').mockReturnValue();
+    intro(true);
+    expect(log).toHaveBeenCalledTimes(3);
+  });
+
+  it('can show intro without warning', () => {
+    const log = vi.spyOn(console, 'log').mockReturnValue();
+    intro();
+    expect(log).toHaveBeenCalledTimes(2);
   });
 
   it('can detect project type', () => {
@@ -80,5 +100,18 @@ describe('Helpers', () => {
       expect.any(Object),
       expect.any(Function)
     );
+  });
+
+  it('can run command with spawn', async () => {
+    const emitter = new EventEmitter();
+    vi.mocked(spawn).mockReturnValue(emitter as any);
+    const resolve = runCommandSpawn('cmd');
+    emitter.emit('close', 0);
+    await expect(resolve).resolves.toBe(true);
+
+    const reject = runCommandSpawn('cmd-foo');
+    const err = new Error('foo');
+    emitter.emit('error', err);
+    await expect(reject).rejects.toThrow('foo');
   });
 });

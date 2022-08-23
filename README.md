@@ -14,12 +14,41 @@
 
 ![Twify](./assets/twify.png)
 
-## :gift: Installation
+## :rocket: New Project
 
-Scaffold a new project of your choice of framework, then simply run,
+Scaffold a new project of your choice of framework, with tailwindcss
 
 ```sh
-npx twify init
+npx twify@latest create vite <my-app-directory>
+
+# Or with preferred package Manager
+
+npx twify@latest yarn create vite <my-app-directory>
+```
+Above the project that is specified is `vite`. You can choose any of the following.
+
+Supported Projects are:
+- `create next <my-app-directory>` - (Latest Next JS)
+- `create nuxt <my-app-directory>` - (Nuxt 2)
+- `create nuxt3 <my-app-directory>` - (Nuxt 3)
+- `create remix <my-app-directory>` - (Latest Remix)
+- `create react <my-app-directory>` - (Latest CRA)
+- `create angular <my-app-directory>` - (Latest Angular)
+- `create laravel <my-app-directory>` - (Latest Laravel)
+
+You can pass all the framework specific flags as well like the following,
+  
+```sh
+npx twify@latest pnpm create vite my-vite-app --template vue-ts
+```
+
+Above will create a new project with the vite vue typescript project with the `pnpm` package manager and it will be configured with Tailwind CSS.
+
+## :gift: Existing Project
+You can also configure existing project with tailwindcss.
+  
+```sh
+npx twify@latest init
 ```
 
 ### Command Options

@@ -4,10 +4,10 @@ export default defineConfig({
   test: {
     globals: true,
     dir: 'tests',
+    cache: false,
     coverage: {
-      all: true,
+      provider: 'istanbul',
       clean: true,
-      src: ['src'],
       exclude: ['src/types.ts', 'tests'],
       reporter: ['clover', 'cobertura', 'html', 'lcov', 'text', 'text-summary'],
     },

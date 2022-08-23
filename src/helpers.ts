@@ -1,9 +1,26 @@
 import fs from 'fs-extra';
-import { exec } from 'child_process';
+import { exec, spawn, SpawnOptions } from 'child_process';
 import path from 'path';
 import { Driver, PackageManager } from './types';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import gradient from 'gradient-string';
+import chalk from 'chalk';
+
+export function intro(warn = false) {
+  console.log(gradient.fruit('\n\n🔥 Welcome to Twify!\n'));
+  console.log(
+    chalk.blue.bold('- A tool to help you setup your project with TailwindCSS.')
+  );
+
+  if (warn) {
+    console.log(
+      chalk.underline.yellow.bold(
+        `\n❯ It might reconfigure any existing setup you might have.\n❯ It is advised to be used in a new project.`
+      )
+    );
+  }
+}
 
 export function getVersion() {
   const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -43,6 +60,20 @@ export function installerPrefix(manager?: PackageManager): string {
     default:
       return fs.existsSync(path.join(process.cwd(), 'yarn.lock')) ? yarn : npm;
   }
+}
+
+export function runCommandSpawn(command: string, options: SpawnOptions = {}) {
+  return new Promise((resolve, reject) => {
+    const result = spawn(command, options);
+
+    result.on('close', async () => {
+      resolve(true);
+    });
+
+    result.on('error', (err) => {
+      reject(err);
+    });
+  });
 }
 
 export function runCommand(cmd: string) {

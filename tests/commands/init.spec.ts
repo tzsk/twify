@@ -25,12 +25,13 @@ describe('Init Command', () => {
     vi.mocked(detectFramework).mockReturnValue('NextJS');
     const prompt = vi
       .spyOn(enquirer, 'prompt')
-      .mockResolvedValue({ proceed: true });
+      .mockResolvedValueOnce({ proceed: true })
+      .mockResolvedValueOnce({ keep: false });
     vi.mocked(handle).mockResolvedValue();
 
     await InitCommand();
     expect(detectFramework).toHaveBeenCalledTimes(1);
-    expect(prompt).toHaveBeenCalledTimes(1);
+    expect(prompt).toHaveBeenCalledTimes(2);
     expect(prompt).toHaveBeenCalledWith({
       type: 'confirm',
       name: 'proceed',
@@ -45,7 +46,28 @@ describe('Init Command', () => {
     const prompt = vi
       .spyOn(enquirer, 'prompt')
       .mockResolvedValueOnce({ proceed: false })
-      .mockResolvedValueOnce({ project: 'Remix' });
+      .mockResolvedValueOnce({ project: 'Remix' })
+      .mockResolvedValueOnce({ keep: false });
+    vi.mocked(handle).mockResolvedValue();
+
+    await InitCommand();
+    expect(detectFramework).toHaveBeenCalledTimes(1);
+    expect(prompt).toHaveBeenCalledTimes(3);
+    expect(prompt).toHaveBeenCalledWith({
+      type: 'select',
+      name: 'project',
+      choices: Object.keys(drivers),
+      message: chalk.green('Choose your framework:'),
+    });
+    expect(handle).toHaveBeenCalledTimes(1);
+  });
+
+  it('will ask to select a framework if unable to detect', async () => {
+    vi.mocked(detectFramework).mockReturnValue(undefined);
+    const prompt = vi
+      .spyOn(enquirer, 'prompt')
+      .mockResolvedValueOnce({ project: 'Nuxt3' })
+      .mockResolvedValueOnce({ keep: false });
     vi.mocked(handle).mockResolvedValue();
 
     await InitCommand();
@@ -60,23 +82,26 @@ describe('Init Command', () => {
     expect(handle).toHaveBeenCalledTimes(1);
   });
 
-  it('will ask to select a framework if unable to detect', async () => {
-    vi.mocked(detectFramework).mockReturnValue(undefined);
-    const prompt = vi
-      .spyOn(enquirer, 'prompt')
-      .mockResolvedValueOnce({ project: 'Nuxt3' });
+  it('will not show intro and will not ask for keeping css', async () => {
+    vi.mocked(detectFramework).mockReturnValue('NextJS');
+    vi.spyOn(enquirer, 'prompt')
+      .mockResolvedValueOnce({ proceed: true })
+      .mockResolvedValueOnce({ keep: false });
     vi.mocked(handle).mockResolvedValue();
 
-    await InitCommand();
-    expect(detectFramework).toHaveBeenCalledTimes(1);
-    expect(prompt).toHaveBeenCalledTimes(1);
-    expect(prompt).toHaveBeenCalledWith({
-      type: 'select',
-      name: 'project',
-      choices: Object.keys(drivers),
-      message: chalk.green('Choose your framework:'),
-    });
+    await InitCommand({ keep: false }, 'NextJS');
+    expect(detectFramework).not.toHaveBeenCalled();
     expect(handle).toHaveBeenCalledTimes(1);
+  });
+
+  it('will show message if exited from keep css prompt', async () => {
+    vi.mocked(detectFramework).mockReturnValue('NextJS');
+    vi.spyOn(enquirer, 'prompt').mockRejectedValue(new Error());
+    vi.mocked(handle).mockResolvedValue();
+
+    await InitCommand({}, 'NextJS');
+    expect(detectFramework).not.toHaveBeenCalled();
+    expect(handle).not.toHaveBeenCalled();
   });
 
   it('can exit out of confirming detected framework', async () => {
@@ -115,7 +140,7 @@ describe('Init Command', () => {
 
     await InitCommand();
     expect(detectFramework).toHaveBeenCalledTimes(1);
-    expect(prompt).toHaveBeenCalledTimes(1);
+    expect(prompt).toHaveBeenCalledTimes(2);
     expect(console.log).toHaveBeenCalledWith(e);
   });
 });
