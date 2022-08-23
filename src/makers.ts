@@ -80,7 +80,9 @@ export function shouldHandleCreateCommand() {
       args.unshift('npm');
     }
 
-    return args;
+    if (args.includes('create')) {
+      return args;
+    }
   }
 
   return false;
