@@ -41,7 +41,7 @@
     "enquirer": "^2.3.6",
     "fs-extra": "^10.1.0",
     "gradient-string": "^2.0.1",
-    "jscodeshift": "^0.13.1",
+    "jscodeshift": "^0.14.0",
     "ora": "^6.1.0"
   },
   "devDependencies": {
