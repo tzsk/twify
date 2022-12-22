@@ -52,7 +52,7 @@
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "@vitest/coverage-istanbul": "^0.26.2",
-    "esbuild": "^0.15.2",
+    "esbuild": "^0.16.10",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
