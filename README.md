@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/tzsk/twify/actions"><img src="https://img.shields.io/github/workflow/status/tzsk/twify/CI/main?logo=github&style=for-the-badge" alt="Build Status"></a>
+  <a href="https://github.com/tzsk/twify/actions"><img src="https://img.shields.io/github/actions/workflow/status/tzsk/twify/test.yaml?branch=main&logo=github&style=for-the-badge" alt="Build Status"></a>
   <a href="https://www.npmjs.com/package/twify"><img src="https://img.shields.io/npm/dt/twify?logo=npm&style=for-the-badge" alt="Total Downloads"></a>
   <a href="https://www.npmjs.com/package/twify"><img src="https://img.shields.io/npm/v/twify?logo=npm&style=for-the-badge" alt="Latest Stable Version"></a>
   <a href="https://github.com/tzsk/twify"><img src="https://img.shields.io/github/languages/top/tzsk/twify?logo=typescript&style=for-the-badge" alt="Language"></a>
@@ -25,19 +25,22 @@ npx twify@latest create vite <my-app-directory>
 
 npx twify@latest yarn create vite <my-app-directory>
 ```
+
 Above the project that is specified is `vite`. You can choose any of the following.
 
 Supported Projects are:
+
 - `create next <my-app-directory>` - (Latest Next JS)
 - `create nuxt <my-app-directory>` - (Nuxt 2)
 - `create nuxt3 <my-app-directory>` - (Nuxt 3)
+- `create svelte <my-app-directory>` - (Svelte Kit)
 - `create remix <my-app-directory>` - (Latest Remix)
 - `create react <my-app-directory>` - (Latest CRA)
 - `create angular <my-app-directory>` - (Latest Angular)
 - `create laravel <my-app-directory>` - (Latest Laravel)
 
 You can pass all the framework specific flags as well like the following,
-  
+
 ```sh
 npx twify@latest pnpm create vite my-vite-app --template vue-ts
 ```
@@ -45,8 +48,9 @@ npx twify@latest pnpm create vite my-vite-app --template vue-ts
 Above will create a new project with the vite vue typescript project with the `pnpm` package manager and it will be configured with Tailwind CSS.
 
 ## :gift: Existing Project
+
 You can also configure existing project with tailwindcss.
-  
+
 ```sh
 npx twify@latest init
 ```
@@ -90,7 +94,7 @@ npx twify init --pretty
 Below are the list of Supported Projects,
 
 | **Framework**    | **Javascript**     | **Typescript**     |
-|------------------|--------------------|--------------------|
+| ---------------- | ------------------ | ------------------ |
 | Next JS          | :white_check_mark: | :white_check_mark: |
 | Remix            | :white_check_mark: | :white_check_mark: |
 | Nuxt 2           | :white_check_mark: | :white_check_mark: |
@@ -101,7 +105,6 @@ Below are the list of Supported Projects,
 | Angular          | :white_check_mark: | :white_check_mark: |
 | Create React App | :white_check_mark: | :white_check_mark: |
 | Gatsby           | :o: WIP            | :o: WIP            |
-
 
 ## :microscope: Testing
 

@@ -60,6 +60,9 @@ describe('Helpers', () => {
 
     pkg.mockReturnValue({ devDependencies: { vite: '1.0.0' } });
     expect(detectFramework()).toBe('Vite');
+
+    pkg.mockReturnValue({ devDependencies: {} });
+    expect(detectFramework()).toBeUndefined();
   });
 
   it('can detect installer', () => {
@@ -104,6 +107,7 @@ describe('Helpers', () => {
 
   it('can run command with spawn', async () => {
     const emitter = new EventEmitter();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     vi.mocked(spawn).mockReturnValue(emitter as any);
     const resolve = runCommandSpawn('cmd');
     emitter.emit('close', 0);

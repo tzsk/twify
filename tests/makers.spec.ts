@@ -73,5 +73,21 @@ describe('Makers', () => {
       'create',
       'example',
     ]);
+
+    vi.stubGlobal('process', {
+      ...process,
+      argv: ['npx', 'twify', 'yarn', 'create', 'example'],
+    });
+    expect(shouldHandleCreateCommand()).toStrictEqual([
+      'yarn',
+      'create',
+      'example',
+    ]);
+
+    vi.stubGlobal('process', {
+      ...process,
+      argv: ['npx', 'twify', 'yarn'],
+    });
+    expect(shouldHandleCreateCommand()).toBeFalsy();
   });
 });
