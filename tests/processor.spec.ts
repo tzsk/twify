@@ -33,10 +33,7 @@ describe('Processor', () => {
     const setup = vi.spyOn(content, 'setupContent').mockResolvedValue();
     const step = vi.fn().mockResolvedValue(true);
     const framework: Framework = {
-      content: {
-        name: 'content',
-        files: [],
-      },
+      content: ['content'],
       requiredDependencies: ['deps'],
       initCommands: ['init'],
       cssLocation: 'css',
@@ -64,14 +61,11 @@ describe('Processor', () => {
     const setup = vi.spyOn(content, 'setupContent').mockResolvedValue();
     const step = vi.fn().mockResolvedValue(true);
     const framework: Framework = {
-      content: {
-        name: 'content',
-        files: [],
-      },
+      content: ['content'],
       requiredDependencies: ['deps'],
       initCommands: ['init'],
       cssLocation: 'css',
-      steps: [step],
+      steps: [],
     };
 
     await handle(framework, { keep: true });
@@ -79,7 +73,7 @@ describe('Processor', () => {
     expect(runner).toHaveBeenCalledWith('npm deps');
     expect(runner).toHaveBeenCalledWith('init');
     expect(setup).toHaveBeenCalledWith(framework);
-    expect(step).toHaveBeenCalled();
+    expect(step).not.toHaveBeenCalled();
     expect(write).toHaveBeenCalledWith('css', 'existing\n\n' + CSS_STUB);
   });
 
@@ -95,20 +89,17 @@ describe('Processor', () => {
     const setup = vi.spyOn(content, 'setupContent').mockResolvedValue();
     const step = vi.fn().mockResolvedValue(true);
     const framework: Framework = {
-      content: {
-        name: 'content',
-        files: [],
-      },
-      requiredDependencies: ['deps'],
-      initCommands: ['init'],
+      content: ['content'],
+      requiredDependencies: [],
+      initCommands: [],
       cssLocation: 'css',
       steps: [step],
     };
 
     await handle(framework, { pretty: true });
 
-    expect(runner).toHaveBeenCalledWith('npm deps');
-    expect(runner).toHaveBeenCalledWith('init');
+    expect(runner).not.toHaveBeenCalledWith('npm deps');
+    expect(runner).not.toHaveBeenCalledWith('init');
     expect(runner).toHaveBeenCalledWith(
       'npm prettier prettier-plugin-tailwindcss'
     );

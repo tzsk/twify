@@ -8,7 +8,7 @@ export default defineConfig({
     coverage: {
       provider: 'istanbul',
       clean: true,
-      exclude: ['src/types.ts', 'tests'],
+      exclude: ['src/types.ts', 'src/main.ts', 'tests'],
       reporter: ['clover', 'cobertura', 'html', 'lcov', 'text', 'text-summary'],
     },
     logHeapUsage: true,
