@@ -1,22 +1,8 @@
 import fs from 'fs-extra';
 import {
   movePostCSS,
-  setupConfigFile,
   setupLayoutFile,
 } from '../../src/frameworks/steps/sveltekit';
-
-async function runConfigStep(file: string) {
-  const code = fs.readFileSync(`./tests/fixtures/sveltekit/${file}`, 'utf8');
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  vi.spyOn(fs, 'readFile').mockResolvedValue(code as any);
-  const writeSpy = vi.spyOn(fs, 'writeFile').mockResolvedValue();
-
-  await setupConfigFile();
-
-  const [fileName, content] = writeSpy.mock.lastCall || [];
-
-  return { fileName, content };
-}
 
 describe('SvelteKit Steps', () => {
   beforeAll(() => {
@@ -31,20 +17,6 @@ describe('SvelteKit Steps', () => {
     vi.resetAllMocks();
   });
 
-  it('can setup svelte.config.js file case 1', async () => {
-    const { fileName, content } = await runConfigStep('case-1.config.stub');
-
-    expect(fileName).toMatch('svelte.config.js');
-    expect(content).toMatchSnapshot();
-  });
-
-  it('can setup svelte.config.js file case 2', async () => {
-    const { fileName, content } = await runConfigStep('case-2.config.stub');
-
-    expect(fileName).toMatch('svelte.config.js');
-    expect(content).toMatchSnapshot();
-  });
-
   it('can setup layout file if it does not exist in ts', async () => {
     vi.spyOn(fs, 'existsSync')
       .mockReturnValueOnce(true)
@@ -55,7 +27,7 @@ describe('SvelteKit Steps', () => {
     await setupLayoutFile();
     const [fileName, content] = writeSpy.mock.lastCall || [];
 
-    expect(fileName).toMatch('src/routes/__layout.svelte');
+    expect(fileName).toMatch('src/routes/+layout.svelte');
     expect(content).toMatchSnapshot();
   });
 
@@ -69,7 +41,7 @@ describe('SvelteKit Steps', () => {
     await setupLayoutFile();
     const [fileName, content] = writeSpy.mock.lastCall || [];
 
-    expect(fileName).toMatch('src/routes/__layout.svelte');
+    expect(fileName).toMatch('src/routes/+layout.svelte');
     expect(content).toMatchSnapshot();
   });
 

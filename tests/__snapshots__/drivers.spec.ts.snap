@@ -102,10 +102,8 @@ exports[`Drivers > has a list of drivers 5`] = `
     "tailwindcss",
     "postcss",
     "autoprefixer",
-    "svelte-preprocess",
   ],
   "steps": [
-    [Function],
     [Function],
     [Function],
   ],
