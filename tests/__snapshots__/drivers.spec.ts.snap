@@ -8,7 +8,7 @@ exports[`Drivers > has a list of drivers 1`] = `
     "./src/**/*.{js,ts,jsx,tsx}",
     "./app/**/*.{js,ts,jsx,tsx}",
   ],
-  "cssLocation": "./styles/globals.css",
+  "cssLocation": [Function],
   "initCommands": [
     "npx tailwindcss init -p",
   ],

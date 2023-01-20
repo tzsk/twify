@@ -92,7 +92,7 @@ describe('Processor', () => {
       content: ['content'],
       requiredDependencies: [],
       initCommands: [],
-      cssLocation: 'css',
+      cssLocation: () => Promise.resolve('css'),
       steps: [step],
     };
 

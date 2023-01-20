@@ -45,13 +45,15 @@ export async function handle(framework: Framework, options: InitOptions) {
   }
 
   // Write content to cssLocation
+  const cssTarget =
+    typeof cssLocation === 'string' ? cssLocation : await cssLocation();
   console.log(
-    `\n${chalk.green('✔')} Setting up ${chalk.blue.bold(cssLocation)}...`
+    `\n${chalk.green('✔')} Setting up ${chalk.blue.bold(cssTarget)}...`
   );
-  fs.ensureFileSync(cssLocation);
-  const exitingCss = fs.readFileSync(cssLocation, 'utf8');
+  fs.ensureFileSync(cssTarget);
+  const exitingCss = fs.readFileSync(cssTarget, 'utf8');
   const updatedCss = !options.keep ? CSS_STUB : `${exitingCss}\n\n${CSS_STUB}`;
-  fs.writeFileSync(cssLocation, updatedCss);
+  fs.writeFileSync(cssTarget, updatedCss);
 
   await setupContent(framework);
 
