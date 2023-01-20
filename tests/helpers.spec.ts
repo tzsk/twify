@@ -7,7 +7,7 @@ import {
   runCommand,
   runCommandSpawn,
 } from '../src/helpers';
-import { EventEmitter } from 'stream';
+import stream from 'stream';
 
 vi.mock('child_process');
 
@@ -106,7 +106,7 @@ describe('Helpers', () => {
   });
 
   it('can run command with spawn', async () => {
-    const emitter = new EventEmitter();
+    const emitter = new stream.EventEmitter();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     vi.mocked(spawn).mockReturnValue(emitter as any);
     const resolve = runCommandSpawn('cmd');

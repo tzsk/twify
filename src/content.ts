@@ -23,9 +23,7 @@ export function addContentToCode(code: string, content: string[]): string {
 }
 
 export async function setupContent({ content }: Framework) {
-  console.log(
-    `\n${chalk.green('✔')} Configuring ${chalk.blue.bold(content)} content...`
-  );
+  console.log(`\n${chalk.green('✔')} Configuring content paths...`);
   console.log(chalk.blue(`- ${content.join('\n- ')}`));
 
   const [contentPath] = tailwindConfigFiles

@@ -1,6 +1,6 @@
 {
   "name": "twify",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "A Tool to Setup TailwindCSS in your Project with a Single Command",
   "bin": {
     "twify": "dist/main.js"
@@ -37,15 +37,17 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^5.0.1",
-    "commander": "^9.3.0",
+    "commander": "^10.0.0",
     "enquirer": "^2.3.6",
-    "fs-extra": "^10.1.0",
+    "fs-extra": "^11.1.0",
+    "glob": "^8.1.0",
     "gradient-string": "^2.0.1",
     "jscodeshift": "^0.14.0",
     "ora": "^6.1.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
+    "@types/glob": "^8.0.1",
     "@types/gradient-string": "^1.1.2",
     "@types/jscodeshift": "^0.11.5",
     "@types/node": "^18.0.0",
@@ -59,7 +61,7 @@
     "microbundle": "^0.15.0",
     "prettier": "^2.6.2",
     "typescript": "^4.6.4",
-    "vitest": "^0.25.1"
+    "vitest": "^0.27.2"
   },
   "prettier": {
     "singleQuote": true,

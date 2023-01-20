@@ -12,10 +12,12 @@ export interface Step {
   (): Promise<void>;
 }
 
+type CSSLocation = () => Promise<string>;
+
 export interface Framework {
   requiredDependencies: string[];
   initCommands: string[];
-  cssLocation: string;
+  cssLocation: string | CSSLocation;
   content: string[];
   steps: Step[];
 }
