@@ -22,22 +22,29 @@ Scaffold a new project of your choice of framework, with tailwindcss
 npx twify@latest create vite <my-app-directory>
 
 # Or with preferred package Manager
-
+# Yarn
 npx twify@latest yarn create vite <my-app-directory>
+# PNPM
+npx twify@latest pnpm create vite <my-app-directory>
 ```
 
 Above the project that is specified is `vite`. You can choose any of the following.
 
-Supported Projects are:
+**Project Usage**:
 
-- `create next <my-app-directory>` - (Latest Next JS)
-- `create nuxt <my-app-directory>` - (Nuxt 2)
-- `create nuxt3 <my-app-directory>` - (Nuxt 3)
-- `create svelte <my-app-directory>` - (Svelte Kit)
-- `create remix <my-app-directory>` - (Latest Remix)
-- `create react <my-app-directory>` - (Latest CRA)
-- `create angular <my-app-directory>` - (Latest Angular)
-- `create laravel <my-app-directory>` - (Latest Laravel)
+Below commands will install the `@latest` versions of the respective frameworks.
+
+| **Framework**    | **Command**                                |
+| ---------------- | ------------------------------------------ |
+| Next 13          | `npx twify@latest create next <my-app>`    |
+| Remix            | `npx twify@latest create remix <my-app>`   |
+| Nuxt 2           | `npx twify@latest create nuxt <my-app>`    |
+| Nuxt 3           | `npx twify@latest create nuxt3 <my-app>`   |
+| Svelte Kit       | `npx twify@latest create svelte <my-app>`  |
+| Laravel Vite     | `npx twify@latest create laravel <my-app>` |
+| Vite             | `npx twify@latest create vite <my-app>`    |
+| Angular          | `npx twify@latest create angular <my-app>` |
+| Create React App | `npx twify@latest create react <my-app>`   |
 
 You can pass all the framework specific flags as well like the following,
 
@@ -95,7 +102,7 @@ Below are the list of Supported Projects,
 
 | **Framework**    | **Javascript**     | **Typescript**     |
 | ---------------- | ------------------ | ------------------ |
-| Next JS          | :white_check_mark: | :white_check_mark: |
+| Next 13          | :white_check_mark: | :white_check_mark: |
 | Remix            | :white_check_mark: | :white_check_mark: |
 | Nuxt 2           | :white_check_mark: | :white_check_mark: |
 | Nuxt 3           | :white_check_mark: | :white_check_mark: |
@@ -104,7 +111,9 @@ Below are the list of Supported Projects,
 | Vite             | :white_check_mark: | :white_check_mark: |
 | Angular          | :white_check_mark: | :white_check_mark: |
 | Create React App | :white_check_mark: | :white_check_mark: |
-| Gatsby           | :o: WIP            | :o: WIP            |
+| Solid JS         | :o: WIP            | :o: WIP            |
+| Astro            | :o: WIP            | :o: WIP            |
+| Qwik             | :o: WIP            | :o: WIP            |
 
 ## :microscope: Testing
 
