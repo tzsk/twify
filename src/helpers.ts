@@ -39,6 +39,7 @@ export function detectFramework(): Driver | undefined {
   if (dependencies['nuxt']) return 'Nuxt2';
   if (dependencies['@angular/core']) return 'Angular';
   if (dependencies['react-scripts']) return 'CreateReactApp';
+  if (dependencies['solid-js']) return 'Solid';
   if (devDependencies['laravel-vite-plugin']) return 'LaravelVite';
   if (devDependencies['@sveltejs/kit']) return 'SvelteKit';
   if (devDependencies['nuxt']) return 'Nuxt3';

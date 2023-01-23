@@ -189,3 +189,21 @@ exports[`Drivers > has a list of drivers 9`] = `
   ],
 }
 `;
+
+exports[`Drivers > has a list of drivers 10`] = `
+{
+  "content": [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  "cssLocation": [Function],
+  "initCommands": [
+    "npx tailwindcss init -p",
+  ],
+  "requiredDependencies": [
+    "tailwindcss",
+    "postcss",
+    "autoprefixer",
+  ],
+  "steps": [],
+}
+`;

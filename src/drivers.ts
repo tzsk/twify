@@ -10,4 +10,5 @@ export const drivers = {
   Angular: (): DriverImport => import('./frameworks/angular'),
   CreateReactApp: (): DriverImport => import('./frameworks/cra'),
   LaravelVite: (): DriverImport => import('./frameworks/laravel'),
+  Solid: (): DriverImport => import('./frameworks/solid'),
 };

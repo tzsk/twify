@@ -1,4 +1,3 @@
-
 name: CD
 
 on:
@@ -6,7 +5,7 @@ on:
     types: [created]
 
 jobs:
-  build:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,7 +16,7 @@ jobs:
       - run: npm run lint
       - run: npm run coverage
 
-  publish-npm:
+  Publish:
     needs: build
     runs-on: ubuntu-latest
     steps:

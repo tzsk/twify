@@ -43,6 +43,7 @@ Below commands will install the `@latest` versions of the respective frameworks.
 | Svelte Kit       | `npx twify@latest create svelte <my-app>`  |
 | Laravel Vite     | `npx twify@latest create laravel <my-app>` |
 | Vite             | `npx twify@latest create vite <my-app>`    |
+| Solid Start      | `npx twify@latest create solid <my-app>`   |
 | Angular          | `npx twify@latest create angular <my-app>` |
 | Create React App | `npx twify@latest create react <my-app>`   |
 
@@ -111,7 +112,7 @@ Below are the list of Supported Projects,
 | Vite             | :white_check_mark: | :white_check_mark: |
 | Angular          | :white_check_mark: | :white_check_mark: |
 | Create React App | :white_check_mark: | :white_check_mark: |
-| Solid JS         | :o: WIP            | :o: WIP            |
+| Solid JS         | :white_check_mark: | :white_check_mark: |
 | Astro            | :o: WIP            | :o: WIP            |
 | Qwik             | :o: WIP            | :o: WIP            |
 
