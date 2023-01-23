@@ -47,6 +47,9 @@ describe('Helpers', () => {
     pkg.mockReturnValue({ dependencies: { 'react-scripts': '1.0.0' } });
     expect(detectFramework()).toBe('CreateReactApp');
 
+    pkg.mockReturnValue({ dependencies: { 'solid-js': '1.0.0' } });
+    expect(detectFramework()).toBe('Solid');
+
     pkg.mockReturnValue({
       devDependencies: { 'laravel-vite-plugin': '1.0.0' },
     });

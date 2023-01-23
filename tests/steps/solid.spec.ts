@@ -1,9 +1,9 @@
 import glob from 'glob';
-import { resolveCssLocation } from '../../src/frameworks/steps/next';
+import { resolveCssLocation } from '../../src/frameworks/steps/solid';
 
 vi.mock('glob');
 
-describe('Next JS CSS', () => {
+describe('Solid JS CSS', () => {
   afterEach(() => {
     vi.clearAllMocks();
   });
@@ -27,6 +27,6 @@ describe('Next JS CSS', () => {
     const second = await resolveCssLocation();
 
     expect(first).toStrictEqual('foo');
-    expect(second).toStrictEqual('./styles/globals.css');
+    expect(second).toStrictEqual('./src/index.css');
   });
 });

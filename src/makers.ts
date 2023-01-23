@@ -1,8 +1,7 @@
 import { runCommand } from './helpers';
-import { PackageManager } from './types';
-import { drivers } from './drivers';
+import { Driver, PackageManager } from './types';
 
-export type Maker = { cmd: string; project: keyof typeof drivers };
+export type Maker = { cmd: string; project: Driver };
 export type SpecialMaker = (packageManager: PackageManager) => Promise<Maker>;
 
 const globalInstallPrefix: Record<PackageManager, string> = {
@@ -38,6 +37,7 @@ const regularMakes: Record<string, Maker> = {
   next: { cmd: 'next-app', project: 'NextJS' },
   react: { cmd: 'react-app', project: 'CreateReactApp' },
   nuxt: { cmd: 'nuxt-app', project: 'Nuxt2' },
+  solid: { cmd: 'solid', project: 'Solid' },
 };
 
 export async function resolveMakeCommand(args: string[]): Promise<Maker> {
