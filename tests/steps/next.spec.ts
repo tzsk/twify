@@ -15,7 +15,6 @@ describe('Next JS CSS', () => {
   it('can resolve css location', async () => {
     vi.mocked(glob)
       .mockImplementationOnce((_, __, cb) => {
-        console.log(typeof cb, cb);
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         return cb(null, ['foo']) as any;
       })
