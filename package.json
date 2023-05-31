@@ -61,7 +61,7 @@
     "microbundle": "^0.15.0",
     "prettier": "^2.6.2",
     "typescript": "^4.6.4",
-    "vitest": "^0.30.1"
+    "vitest": "^0.31.2"
   },
   "prettier": {
     "singleQuote": true,
