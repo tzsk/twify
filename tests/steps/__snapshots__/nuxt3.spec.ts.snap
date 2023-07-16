@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Nuxt 3 Steps > can setup nuxt.config.ts file case 1 1`] = `
 "import { defineNuxtConfig } from 'nuxt';
