@@ -42,7 +42,7 @@
     "fs-extra": "^11.1.0",
     "glob": "^8.1.0",
     "gradient-string": "^2.0.1",
-    "jscodeshift": "^0.14.0",
+    "jscodeshift": "^0.15.0",
     "ora": "^6.1.0"
   },
   "devDependencies": {
