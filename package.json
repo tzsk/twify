@@ -63,11 +63,11 @@
     "typescript": "^4.6.4",
     "vitest": "^0.33.0"
   },
-  "overrides": {
-    "serialize-javascript": "^7.1.0"
-  },
   "prettier": {
     "singleQuote": true,
     "trailingComma": "es5"
+  },
+  "overrides": {
+    "serialize-javascript": "^6.0.2"
   }
 }
